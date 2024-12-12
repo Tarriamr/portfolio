@@ -1,0 +1,108 @@
+@media (max-width: 768px) {
+
+  body {
+    min-width: 320px;
+    justify-content: left;
+  }
+
+  header {
+    min-width: 100%;
+  }
+
+  .nav {
+    width: calc(100% - 20px);
+    min-width: 288px;
+    height: 50px;
+    margin-top: 10px;
+  }
+
+  .logo {
+    > span:last-child {
+      display: none;
+    }
+  }
+
+  #hamburgerMenu {
+    background-color: unset;
+    box-shadow: none;
+    display: revert;
+    width: 50px;
+    height: 50px;
+  }
+
+  .links {
+    display: grid;
+    place-content: center;
+    position: absolute;
+    left: 0;
+    top: 90px;
+    z-index: 1;
+    background-color: var(--colorMain);
+    height: 286px;
+    width: 100%;
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: var(--colorBackground);
+    box-shadow: var(--colorShadowWhite) 0 4px 4px 0;
+
+    > div {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      width: max-content;
+      margin-left: 37px;
+
+      a {
+        line-height: 20px;
+      }
+    }
+  }
+
+  main {
+    width: 100%;
+    min-width: 320px;
+  }
+
+  #main-description-and-skills {
+    width: calc(100% - 32px);
+    min-width: 288px;
+
+    img {
+      object-position: -45px;
+    }
+
+    > div {
+      > div:last-child {
+        row-gap: 40px;
+
+        > div {
+          grid-template-columns: 100%;
+          row-gap: 36px;
+          place-self: center;
+        }
+      }
+    }
+  }
+
+  .projects {
+    grid-template-columns: 100%;
+    row-gap: 41px;
+    min-width: 300px;
+  }
+
+  .project {
+    width: 100%;
+
+    > div {
+      width: 250px;
+
+      > ul {
+        font-size: 16px;
+      }
+    }
+  }
+
+  footer {
+    min-width: 320px;
+  }
+}

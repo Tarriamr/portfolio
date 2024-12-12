@@ -1,7 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=League+Spartan:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=League+Spartan:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 html {
   --colorMain: #1F2041;
   --colorBackground: #F9F9F9;
@@ -11,13 +7,19 @@ html {
   --colorSelection: #b3d4fc;
   --colorProjectTitle: #F1EBE1;
   --colorShadow: #00000040;
-  --fontLeagueGothic: League Gothic;
-  --fontLeagueSpartan: League Spartan;
-  --fontRoboto: Roboto;
+  --colorShadowWhite: #FFFFFF40;
+  --colorBlack: #000000;
+  --colorRed: #AF0808;
+  --fontLeagueGothic: "League Gothic", sans-serif;
+  --fontLeagueSpartan: "League Spartan", sans-serif;
+  --fontRoboto: "Roboto", sans-serif;
   --dotEmpty: url("data:image/svg+xml,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Ccircle%20cx%3D%226.19556%22%20cy%3D%226.28137%22%20r%3D%225.5%22%20stroke%3D%22%231F2041%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --dotFilled: url("data:image/svg+xml,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Ccircle%20cx%3D%226.19556%22%20cy%3D%226.28137%22%20r%3D%225.5%22%20fill%3D%22%231F2041%22%20stroke%3D%22%231F2041%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --buttonArrowLeft: url("data:image/svg+xml,%3Csvg%20width%3D%2241%22%20height%3D%2241%22%20viewBox%3D%220%200%2041%2041%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M18.0127%2026.5479C18.4976%2027.0393%2018.4924%2027.8307%2018.0011%2028.3157C17.5097%2028.8006%2016.7183%2028.7954%2016.2333%2028.304L9.61064%2021.5937C9.1257%2021.1023%209.1309%2020.3109%209.62226%2019.826L16.3326%2013.2033C16.824%2012.7183%2017.6154%2012.7235%2018.1003%2013.2149C18.5853%2013.7062%2018.5801%2014.4977%2018.0887%2014.9826L13.5262%2019.4855L29.6748%2019.5916C30.3651%2019.5962%2030.9211%2020.1595%2030.9165%2020.8498C30.912%2021.5402%2030.3487%2022.0961%2029.6583%2022.0916L13.5098%2021.9854L18.0127%2026.5479Z%22%20fill%3D%22%231F2041%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   --buttonArrowRight: url("data:image/svg+xml,%3Csvg%20width%3D%2241%22%20height%3D%2241%22%20viewBox%3D%220%200%2041%2041%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M22.9494%2014.9986C22.4612%2014.5104%2022.4612%2013.719%2022.9494%2013.2308C23.4375%2012.7427%2024.229%2012.7427%2024.7171%2013.2308L31.3838%2019.8975C31.872%2020.3856%2031.872%2021.1771%2031.3838%2021.6653L24.7171%2028.3319C24.229%2028.8201%2023.4375%2028.8201%2022.9494%2028.3319C22.4612%2027.8438%2022.4612%2027.0523%2022.9494%2026.5642L27.4822%2022.0314H11.3333C10.6429%2022.0314%2010.0833%2021.4717%2010.0833%2020.7814C10.0833%2020.091%2010.6429%2019.5314%2011.3333%2019.5314H27.4822L22.9494%2014.9986Z%22%20fill%3D%22%231F2041%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --buttonAdd: url("data:image/svg+xml,%3Csvg%20width%3D%2217%22%20height%3D%2218%22%20viewBox%3D%220%200%2017%2018%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M8.25%200.75C8.44891%200.75%208.63968%200.829018%208.78033%200.96967C8.92098%201.11032%209%201.30109%209%201.5V8.25H15.75C15.9489%208.25%2016.1397%208.32902%2016.2803%208.46967C16.421%208.61032%2016.5%208.80109%2016.5%209C16.5%209.19891%2016.421%209.38968%2016.2803%209.53033C16.1397%209.67098%2015.9489%209.75%2015.75%209.75H9V16.5C9%2016.6989%208.92098%2016.8897%208.78033%2017.0303C8.63968%2017.171%208.44891%2017.25%208.25%2017.25C8.05109%2017.25%207.86032%2017.171%207.71967%2017.0303C7.57902%2016.8897%207.5%2016.6989%207.5%2016.5V9.75H0.75C0.551088%209.75%200.360322%209.67098%200.21967%209.53033C0.0790175%209.38968%200%209.19891%200%209C0%208.80109%200.0790175%208.61032%200.21967%208.46967C0.360322%208.32902%200.551088%208.25%200.75%208.25H7.5V1.5C7.5%201.30109%207.57902%201.11032%207.71967%200.96967C7.86032%200.829018%208.05109%200.75%208.25%200.75Z%22%20fill%3D%22%231F2041%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --buttonBin: url("data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2222%22%20viewBox%3D%220%200%2022%2022%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M16.3334%203.1429V3.38001C17.8729%203.50409%2019.4062%203.68251%2020.9295%203.91482C21.0445%203.93238%2021.1545%203.96973%2021.2531%204.02475C21.3518%204.07976%2021.4372%204.15136%2021.5044%204.23546C21.5716%204.31955%2021.6194%204.4145%2021.6451%204.51487C21.6707%204.61524%2021.6736%204.71908%2021.6537%204.82045C21.6337%204.92182%2021.5914%205.01874%2021.5289%205.10567C21.4665%205.19261%2021.3853%205.26785%2021.2899%205.32712C21.1944%205.38638%2021.0867%205.4285%2020.9728%205.45107C20.8589%205.47365%2020.7411%205.47623%2020.6261%205.45867L20.3784%205.42211L19.1873%2019.0744C19.1186%2019.8615%2018.7154%2020.5968%2018.0581%2021.1333C17.4009%2021.6697%2016.5382%2021.9677%2015.6424%2021.9678H6.35886C5.46309%2021.9677%204.60035%2021.6697%203.94313%2021.1333C3.28591%2020.5968%202.88265%2019.8615%202.81397%2019.0744L1.62168%205.42211L1.37397%205.45867C1.25896%205.47623%201.14114%205.47365%201.02725%205.45107C0.913365%205.4285%200.805638%205.38638%200.71022%205.32712C0.517516%205.20743%200.386653%205.02517%200.346419%204.82045C0.306184%204.61572%200.359875%204.40529%200.495679%204.23546C0.631483%204.06562%200.838276%203.95028%201.07057%203.91482C2.59384%203.68223%204.12714%203.50381%205.66671%203.38001V3.1429C5.66671%201.50923%207.10434%200.113708%209.00419%200.0604361C10.3348%200.0229048%2011.6665%200.0229048%2012.9971%200.0604361C14.8969%200.113708%2016.3334%201.50923%2016.3334%203.1429ZM9.06108%201.62622C10.3538%201.58978%2011.6475%201.58978%2012.9402%201.62622C13.8326%201.65129%2014.5556%202.31353%2014.5556%203.1429V3.26094C12.1874%203.13418%209.81268%203.13418%207.44449%203.26094V3.1429C7.44449%202.31353%208.16627%201.65129%209.06108%201.62622ZM8.64034%207.83606C8.63583%207.73318%208.60837%207.6321%208.55952%207.53857C8.51068%207.44504%208.44142%207.36091%208.35569%207.29098C8.26995%207.22104%208.16943%207.16668%208.05986%207.13098C7.95029%207.09529%207.83381%207.07896%207.71708%207.08294C7.60035%207.08692%207.48565%207.11112%207.37954%207.15417C7.27342%207.19721%207.17796%207.25826%207.09861%207.33382C7.01926%207.40938%206.95757%207.49797%206.91707%207.59454C6.87657%207.69111%206.85805%207.79377%206.86256%207.89665L7.27382%2017.2976C7.28294%2017.5052%207.38527%2017.7012%207.5583%2017.8423C7.64398%2017.9122%207.74444%2017.9665%207.85394%2018.0022C7.96344%2018.0379%208.07983%2018.0542%208.19649%2018.0502C8.31314%2018.0462%208.42776%2018.022%208.53381%2017.979C8.63985%2017.936%208.73525%2017.875%208.81454%2017.7995C8.89384%2017.724%208.95548%2017.6354%208.99595%2017.5389C9.03642%2017.4424%209.05493%2017.3398%209.05041%2017.237L8.64034%207.83606ZM15.1352%207.89665C15.1438%207.79179%2015.1285%207.68647%2015.09%207.58695C15.0516%207.48743%2014.9908%207.39575%2014.9112%207.31738C14.8317%207.23901%2014.7351%207.17555%2014.6272%207.13077C14.5193%207.08599%2014.4022%207.06082%2014.283%207.05675C14.1638%207.05269%2014.0449%207.06981%2013.9334%207.10709C13.8218%207.14438%2013.72%207.20107%2013.6338%207.27379C13.5477%207.34651%2013.479%207.43377%2013.4319%207.53037C13.3848%207.62697%2013.3603%207.73093%2013.3597%207.83606L12.9485%2017.237C12.9394%2017.4448%2013.0243%2017.6472%2013.1845%2017.7998C13.3448%2017.9524%2013.5673%2018.0427%2013.803%2018.0507C14.0388%2018.0587%2014.2685%2017.9839%2014.4416%2017.8427C14.6148%2017.7014%2014.7171%2017.5054%2014.7263%2017.2976L15.1352%207.89665Z%22%20fill%3D%22%231F2041%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  --buttonClose: url("data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M1%2013L13%201M1%201L13%2013%22%20stroke%3D%22%231F2041%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
 body {
@@ -44,14 +46,6 @@ body {
   text-shadow: none;
 }
 
-a:link {
-  text-decoration: none;
-}
-
-a:hover {
-  cursor: pointer;
-}
-
 .grid-rows {
   display: grid;
   grid-template-columns: 1fr;
@@ -66,9 +60,71 @@ a:hover {
   transform: translate(-50%, -50%);
 }
 
+.button-grey {
+  position: relative;
+  padding: 0;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--colorGray);
+  box-shadow: var(--colorShadow) 0 4px 4px 0;
+  border: none;
+  cursor: pointer;
+}
+
+h3 {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+h4 {
+  font-family: var(--fontLeagueSpartan);
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0;
+}
+
+p {
+  font-family: var(--fontRoboto);
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0;
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--colorWhite);
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+a:visited {
+  text-decoration: none;
+  color: var(--colorWhite);
+}
+
+a.activePage {
+  color: var(--colorGray);
+}
+
+
+header {
+  display: grid;
+  position: relative;
+  width: 100vw;
+  height: 500px;
+  color: var(--colorWhite);
+  background-color: var(--colorMain);
+}
+
 .nav {
+  justify-self: center;
+  width: 1200px;
   height: 42px;
-  margin: 37px 120px 0 120px;
+  margin-top: 37px;
   display: grid;
   grid-template-columns: repeat(2, max-content);
   place-content: center;
@@ -91,15 +147,111 @@ a:hover {
   }
 }
 
-.links {
-  display: grid;
-  grid-template-columns: repeat(5, max-content);
-  gap: 30px;
-  align-content: center;
-  font-weight: 700;
+#hamburgerMenu {
+  display: none;
+}
 
-  > span {
-    color: var(--colorGray);
+.links {
+  place-self: center;
+  height: max-content;
+
+  > div {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    gap: 30px;
+    align-content: center;
+    font-weight: 700;
+  }
+}
+
+#title {
+  > h1 {
+    font-family: var(--fontLeagueGothic);
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 7.2rem;
+    margin: 0;
+    text-align: center;
+  }
+
+  > h2 {
+    font-family: var(--fontLeagueSpartan);
+    letter-spacing: 0.36em;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.84rem;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+main {
+  place-self: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, max-content);
+  grid-row-gap: 84px;
+  max-width: 1440px;
+  width: 100vw;
+  min-height: calc(100vh - 500px - 400px);
+  justify-items: center;
+}
+
+#main-description-and-skills {
+  gap: 65px;
+  margin-top: 84px;
+  max-width: 958px;
+
+  > div {
+    row-gap: 40px;
+
+    > div:first-child {
+      row-gap: 17px;
+    }
+
+    > div {
+      row-gap: 30px;
+
+      > div {
+        display: grid;
+        grid-template-columns: repeat(4, 182px);
+        grid-template-rows: max-content;
+        row-gap: 32px;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+#main-description-and-skills img {
+  object-fit: cover;
+  object-position: 0 0;
+  width: 100%;
+  height: 311px;
+  border-radius: 16px;
+}
+
+#buttonNavigate {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 55px;
+  margin-bottom: 84px;
+
+  > button {
+    width: 60px;
+    height: 60px;
+  }
+
+  > button:first-child {
+    background-image: var(--buttonArrowLeft);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  > button:last-child {
+    background-image: var(--buttonArrowRight);
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
@@ -147,12 +299,20 @@ a:hover {
   }
 }
 
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 360px);
+  place-content: center;
+  column-gap: calc((100% - 3 * 360px) / 2);
+  width: calc(100% - 2 * 139px);
+}
+
 .project {
   display: grid;
   width: 360px;
   height: 460px;
   border-radius: 16px;
-  background: linear-gradient(to bottom, #000000, transparent), url("/img/backgroundProject.jpg") center;
+  background: linear-gradient(to bottom, var(--colorBlack), transparent), url("/img/backgroundProject.jpg") center;
   background-size: cover;
   box-shadow: var(--colorShadow) 0 4px 4px 0;
   color: var(--colorWhite);
@@ -189,160 +349,40 @@ a:hover {
   gap: 30px;
 }
 
-h4 {
-  font-family: var(--fontLeagueSpartan);
-  font-weight: 700;
-  font-size: 2rem;
-  margin: 0;
-}
-
-p {
-  font-family: var(--fontRoboto);
-  font-weight: 400;
-  font-size: 1rem;
-  margin: 0;
-}
-
-header {
-  position: relative;
-  width: 1440px;
-  height: 500px;
-  color: var(--colorWhite);
-  background-color: var(--colorMain);
-}
-
-#title {
-
-  > h1 {
-    font-family: var(--fontLeagueGothic);
-    font-size: 6rem;
-    font-weight: 400;
-    line-height: 7.2rem;
-    margin: 0;
-    text-align: center;
-  }
-
-  > h2 {
-    font-family: var(--fontLeagueSpartan);
-    letter-spacing: 11px;
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 1.84rem;
-    margin: 0;
-    text-align: center;
-  }
-}
-
-main {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, max-content);
-  grid-row-gap: 84px;
-  width: 1440px;
-  justify-items: center;
-}
-
-#main-description-and-skills {
-  --width: 958px;
-  gap: 65px;
-  margin-top: 84px;
-  width: 958px;
-
-  > div {
-    row-gap: 40px;
-
-    > div:first-child {
-      row-gap: 17px;
-    }
-
-    > div {
-      row-gap: 30px;
-
-      > div {
-        display: grid;
-        grid-template-columns: repeat(4, 182px);
-        grid-template-rows: max-content;
-        row-gap: 32px;
-        justify-content: space-between;
-      }
-    }
-  }
-}
-
-#main-description-and-skills img {
-  object-fit: cover;
-  object-position: 0 0;
-  width: 100%;
-  height: 311px;
-  border-radius: 16px;
-}
-
-#projects {
-  display: inline-grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(auto-fit, 360px);
-  place-content: center;
-  gap: calc(100% - 3 * 360px);
-  width: 1162px;
-}
-
-#buttonNavigate {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 55px;
-  margin-bottom: 84px;
-
-  > button {
-    display: grid;
-    place-items: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    background-color: var(--colorGray);
-    box-shadow: var(--colorShadow) 0 4px 4px 0;
-    border: none;
-    cursor: pointer;
-  }
-
-  > button:first-child {
-    background-image: var(--buttonArrowLeft);
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  > button:last-child {
-    background-image: var(--buttonArrowRight);
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
-
 footer {
-  position: relative;
-  width: 1440px;
+  display: grid;
+  width: 100vw;
   height: 400px;
   background-color: var(--colorMain);
   color: var(--colorWhite);
   font-family: var(--fontRoboto);
   font-weight: 700;
 
-  > div:first-child.links {
-    position: absolute;
-    top: 60px;
-    left: 120px;
-    grid-template-columns: 1fr;
-  }
+  > div {
+    display: grid;
+    place-self: center;
+    width: 100%;
+    height: calc(100% - 120px);
+    max-width: 1200px;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, auto);
 
-  > div:last-child {
-    position: absolute;
-    bottom: 60px;
-    right: 120px;
+    > div {
+      place-self: start left;
+      display: grid;
+      grid-row-gap: 30px;
+      grid-template-columns: max-content;
+    }
 
-    > span {
-      font-size: 1.6875rem;
+    > div {
+      place-self: end right;
 
-      > span.logo {
+      > span {
         font-size: 1.6875rem;
+
+        > span.logo {
+          font-size: 1.6875rem;
+        }
       }
     }
   }

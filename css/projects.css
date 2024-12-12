@@ -1,0 +1,119 @@
+@import "style.css";
+
+#button-add-project {
+  margin-top: 84px;
+}
+
+main > div {
+
+  backdrop-filter: grayscale(90%);
+  -webkit-backdrop-filter: grayscale(90%);
+}
+
+dialog::backdrop {
+  background-color: red;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#new-project {
+
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 50rem;
+  height: 26.5rem;
+  background-color: var(--colorBackground);
+
+  > button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: var(--buttonClose);
+    background-color: var(--colorBackground);
+    border-radius: unset;
+    box-shadow: none;
+    margin: 0.375rem;
+  }
+
+  > div {
+    display: grid;
+    gap: 2rem;
+    position: relative;
+    width: 35rem;
+    height: 18.75rem;
+    place-self: center center;
+    font-family: var(--fontRoboto);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+
+    div {
+      display: grid;
+      grid-auto-rows: max-content;
+    }
+
+    label {
+      font-family: var(--fontLeagueSpartan);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    input {
+      height: 1.25rem;
+      border: 0 solid var(--colorRed);
+      border-bottom-width: 0.125rem;
+      padding: 0;
+      background-color: unset;
+      outline: 0;
+    }
+
+    span {
+      margin-top: 0.375rem;
+      color: var(--colorRed);
+      font-size: 0.75rem;
+    }
+  }
+}
+
+#button-create-project {
+  place-self: end center;
+}
+
+.projects {
+  row-gap: 84px;
+  place-content: start;
+}
+
+.project > button {
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  place-self: end;
+  background-image: var(--buttonBin);
+  background-color: var(--colorBackground);
+}
+
+main button {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  place-content: center;
+  gap: 24px;
+  width: 240px;
+  height: 60px;
+  font-family: var(--fontRoboto);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: normal;
+  color: var(--colorMain);
+
+  > span {
+    background-image: var(--buttonAdd);
+    width: 17px;
+    height: 17px;
+  }
+}
