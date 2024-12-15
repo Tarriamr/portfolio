@@ -1,18 +1,16 @@
 @media (max-width: 768px) {
 
   body {
-    min-width: 320px;
-    justify-content: left;
+    justify-content: start;
   }
 
   header {
-    min-width: 100%;
+    min-width: 320px;
   }
 
   .nav {
     width: calc(100% - 20px);
     min-width: 288px;
-    height: 50px;
     margin-top: 10px;
   }
 
@@ -25,14 +23,12 @@
   #hamburgerMenu {
     background-color: unset;
     box-shadow: none;
-    display: revert;
     width: 50px;
     height: 50px;
   }
 
-  .links {
-    display: grid;
-    place-content: center;
+  #headerLinks {
+    place-content: center start;
     position: absolute;
     left: 0;
     top: 90px;
@@ -66,10 +62,6 @@
   #main-description-and-skills {
     width: calc(100% - 32px);
     min-width: 288px;
-
-    img {
-      object-position: -45px;
-    }
 
     > div {
       > div:last-child {
