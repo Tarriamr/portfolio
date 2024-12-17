@@ -301,12 +301,12 @@ main {
   grid-template-columns: repeat(auto-fit, 360px);
   grid-template-rows: 1fr;
   place-content: center;
-  column-gap: calc((100% - 2 * 360px) / 1);
+  gap: 41px;
   width: calc(100% - 278px);
 }
 
 .project {
-  display: grid;
+  display: none;
   width: 360px;
   height: 460px;
   border-radius: 16px;

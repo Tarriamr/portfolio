@@ -1,6 +1,6 @@
 const newProject = document.createDocumentFragment();
 const projectSkills = document.createDocumentFragment();
-const divProjects = document.querySelector('#projects');
+export const divProjects = document.querySelector('#projects');
 
 function setProjectSkills(listOfSkills) {
   listOfSkills.forEach(skill => {
