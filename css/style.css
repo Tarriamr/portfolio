@@ -50,8 +50,8 @@ body {
 
 .grid-rows {
   display: grid;
-  grid-template-columns: max-content;
-  grid-auto-rows: max-content;
+  grid-template-columns: auto;
+  grid-auto-rows: auto;
   row-gap: 16px;
 }
 
@@ -197,6 +197,7 @@ main {
   gap: 65px;
   margin-top: 84px;
   max-width: 958px;
+  width: calc(100vw - 482px);
 
   > div {
     row-gap: 40px;
@@ -210,9 +211,9 @@ main {
 
       > div {
         display: grid;
-        grid-template-columns: repeat(4, 182px);
+        grid-template-columns: repeat(auto-fit, 182px);
         grid-template-rows: max-content;
-        row-gap: 32px;
+        gap: 32px;
         justify-content: space-between;
       }
     }
@@ -295,12 +296,13 @@ main {
   }
 }
 
-.projects {
+#projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, 360px);
+  grid-template-rows: 1fr;
   place-content: center;
-  column-gap: calc((100% - 3 * 360px) / 2);
-  width: calc(100% - 2 * 139px);
+  column-gap: calc((100% - 2 * 360px) / 1);
+  width: calc(100% - 278px);
 }
 
 .project {
