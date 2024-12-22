@@ -7,14 +7,17 @@ import {
   hamburgerMenuClicked
 } from "../js/index/hamburgerMenu.js";
 import {projects} from "./projects/projects.js";
+import {homePageController} from "./homePageController.js";
 
 function init() {
   const $homeButton = document.getElementById('homeButton');
   const $projectsButton = document.getElementById('projectsButton');
 
+
   $homeButton.addEventListener('click', ()=>{
     document.getElementById('homePage').style.display = 'block';
     document.getElementById('projectsPage').style.display = 'none';
+    homePageController.onOpen();
   });
 
   $projectsButton.addEventListener('click', ()=>{
@@ -23,7 +26,9 @@ function init() {
     displayProjectsPage();
   });
 
-  displayHomePage();
+  homePageController.onOpen();
+
+  // displayHomePage();
 
   window.onresize = () => {
     resizeElements($headerLinks, $headerButtonHamburgerMenu, hamburgerMenuClicked);
