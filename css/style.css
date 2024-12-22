@@ -181,7 +181,7 @@ header {
   }
 }
 
-main {
+main > div {
   place-self: center;
   display: grid;
   grid-template-columns: 1fr;
@@ -278,7 +278,7 @@ main {
   background-image: var(--dotFilled);
 }
 
-#projects {
+.projectsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, 360px);
   grid-template-rows: 1fr;
@@ -288,7 +288,7 @@ main {
 }
 
 .project {
-  display: none;
+  // display: none;
   width: 360px;
   height: 460px;
   border-radius: 16px;
@@ -395,4 +395,8 @@ footer {
     grid-template-columns: 1fr;
     place-items: center;
   }
+}
+
+.projectsPage {
+  display: none;
 }

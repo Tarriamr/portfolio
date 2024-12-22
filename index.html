@@ -1,6 +1,5 @@
 <!doctype html>
 <html class = "no-js" lang = "en">
-
   <head>
     <meta charset = "utf-8">
     <meta content = "width=device-width, initial-scale=1" name = "viewport">
@@ -30,7 +29,9 @@
         <h3 class = "logo"><span>ITP</span><span>ortfolio</span></h3>
         <div class = "links" id = "headerLinks">
           <div>
-            <a class = "activePage" href = "#">HOME</a> <a href = "projects.html">PROJECTS</a> <a href = "about.html">ABOUT</a>
+            <a id="homeButton" class = "activePage">HOME</a>
+            <a id="projectsButton" >PROJECTS</a>
+            <a href = "about.html">ABOUT</a>
             <a>CONTACT</a> <a>MESSAGES</a>
           </div>
         </div>
@@ -41,30 +42,40 @@
         <h2>WEB-DESIGNER</h2>
       </div>
     </header>
+
     <main>
-      <div class = "grid-rows" id = "main-description-and-skills">
-        <img alt = "Man's profile" src = "img/male.jpg"/>
-        <div class = "grid-rows">
+      <div id="homePage">
+        <div class = "grid-rows" id = "main-description-and-skills">
+          <img alt = "Man's profile" src = "img/male.jpg"/>
           <div class = "grid-rows">
-            <h4>About me</h4>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-               et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-               rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-               dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-               magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-          </div>
-          <div class = "grid-rows">
-            <h4>My Skills</h4>
-            <div id = "skills"></div>
+            <div class = "grid-rows">
+              <h4>About me</h4>
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                 et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                 rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                 dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                 magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+            </div>
+            <div class = "grid-rows">
+              <h4>My Skills</h4>
+              <div id = "skills"></div>
+            </div>
           </div>
         </div>
+        <div class="projectsContainer"></div>
+        <div id = "buttonsCarousel">
+          <button class = "button-grey"></button>
+          <button class = "button-grey"></button>
+        </div>
       </div>
-      <div id = "projects"></div>
-      <div id = "buttonsCarousel">
-        <button class = "button-grey"></button>
-        <button class = "button-grey"></button>
+
+      <div id="projectsPage" class="projectsPage">
+        <dialog id = "new-project"></dialog>
+        <button class = "add button-grey" id = "buttonAddProject"><span></span>Add project</button>
+        <div class="projectsContainer2"></div>
       </div>
     </main>
+
     <footer>
       <div>
         <div class = "links" id = "footerLinks">
@@ -79,7 +90,8 @@
         </div>
       </div>
     </footer>
-    <script src = "js/index/app.js" type = "module"></script>
+
+    <script src = "./src/index.js" type = "module"></script>
   </body>
 
 </html>

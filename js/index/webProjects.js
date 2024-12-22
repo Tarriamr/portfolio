@@ -4,7 +4,7 @@ import {$headerButtonHamburgerMenu, $headerLinks, hamburgerMenuClicked} from "./
 import {NewProject} from "./newProject.js";
 
 const $footerLinks = document.querySelector('footer .links');
-const $newProject = document.querySelector('#new-project');
+const $newProject = document.querySelector('#');
 const $buttonAddProject = document.querySelector('#buttonAddProject');
 
 const numberOfProjects = projects.length;

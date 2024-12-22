@@ -1,8 +1,6 @@
-const $skills = document.querySelector('#skills');
-const $dotYears = document.createDocumentFragment();
+import { skills } from "./skills.js";
 
-
-function setDotYears(years) {
+function renderDotYears(years, $dotYears) {
   for (let i = 0; i < 5; i++) {
     const $div = document.createElement('div');
     if (i < years) {
@@ -14,7 +12,10 @@ function setDotYears(years) {
   }
 }
 
-function setSkill(skill) {
+function renderSkill(skill) {
+  const $skills = document.querySelector('#skills');
+  const $dotYears = document.createDocumentFragment();
+
   const $divSkillLogo = document.createElement('div');
   $divSkillLogo.style.backgroundImage = `url("/img/skillsIcons/${skill.title.toLowerCase()}.png")`
 
@@ -22,7 +23,7 @@ function setSkill(skill) {
   $divSkillName.textContent = skill.title;
 
   const $divDotYears = document.createElement('div');
-  setDotYears(skill.years);
+  renderDotYears(skill.years, $dotYears);
   $divDotYears.append($dotYears);
 
   const $divYears = document.createElement('div');
@@ -37,9 +38,9 @@ function setSkill(skill) {
   }
 }
 
-export function uploadAllSkills(skills) {
+export function renderSkills() {
   skills.forEach((skill) => {
-    setSkill(skill)
+    renderSkill(skill);
   })
 }
 
