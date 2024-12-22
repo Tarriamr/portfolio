@@ -1,92 +1,97 @@
 @import "style.css";
 
-#button-add-project {
+main > button {
   margin-top: 84px;
 }
 
 main > div {
-
   backdrop-filter: grayscale(90%);
   -webkit-backdrop-filter: grayscale(90%);
 }
 
 dialog::backdrop {
-  background-color: red;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 #new-project {
-
-  position: absolute;
+  position: fixed;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
   z-index: 10;
-  width: 50rem;
-  height: 26.5rem;
+  border: none;
+  height: 424px;
+  width: 800px;
   background-color: var(--colorBackground);
 
   > button {
     position: absolute;
     top: 0;
     right: 0;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
     background-image: var(--buttonClose);
     background-color: var(--colorBackground);
     border-radius: unset;
     box-shadow: none;
-    margin: 0.375rem;
+    margin: 6px;
   }
 
   > div {
     display: grid;
-    gap: 2rem;
+    gap: 32px;
     position: relative;
-    width: 35rem;
-    height: 18.75rem;
+    width: 560px;
+    height: 300px;
     place-self: center center;
     font-family: var(--fontRoboto);
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 400;
     line-height: normal;
 
-    div {
+    > div {
       display: grid;
       grid-auto-rows: max-content;
+
+      > label {
+        font-family: var(--fontLeagueSpartan);
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      > input {
+        height: 20px;
+        border: 0 solid var(--colorMain);
+        border-bottom-width: 2px;
+        padding: 0;
+        background-color: unset;
+        outline: 0;
+      }
+
+      > span {
+        margin-top: 16px;
+        color: var(--colorRed);
+        font-size: 12px;
+        height: 14px;
+      }
     }
 
-    label {
-      font-family: var(--fontLeagueSpartan);
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    input {
-      height: 1.25rem;
-      border: 0 solid var(--colorRed);
-      border-bottom-width: 0.125rem;
-      padding: 0;
-      background-color: unset;
-      outline: 0;
-    }
-
-    span {
-      margin-top: 0.375rem;
-      color: var(--colorRed);
-      font-size: 0.75rem;
-    }
   }
 }
 
 #button-create-project {
   place-self: end center;
+
+  span {
+    width: 17px;
+    height: 17px;
+  }
 }
 
-.projects {
+#projects {
   row-gap: 84px;
-  place-content: start;
+  grid-template-rows: max-content;
 }
 
 .project > button {
@@ -96,9 +101,11 @@ dialog::backdrop {
   place-self: end;
   background-image: var(--buttonBin);
   background-color: var(--colorBackground);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-main button {
+.add {
   display: grid;
   grid-template-columns: repeat(2, max-content);
   place-content: center;

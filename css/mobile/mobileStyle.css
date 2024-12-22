@@ -76,14 +76,15 @@
     }
   }
 
-  .projects {
+  #projects {
     grid-template-columns: 100%;
+    place-items: center;
     row-gap: 41px;
     min-width: 300px;
   }
 
   .project {
-    width: 100%;
+    width: 300px;
 
     > div {
       width: 250px;
@@ -96,5 +97,22 @@
 
   footer {
     min-width: 320px;
+    height: 232px;
+
+    > div {
+      width: calc(100% - 36px);
+      grid-template-columns: 1fr;
+      place-content: center;
+
+      > div:last-child {
+        place-self: center;
+
+        .logo {
+          > span:last-child {
+            display: initial;
+          }
+        }
+      }
+    }
   }
 }

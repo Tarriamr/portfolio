@@ -228,30 +228,6 @@ main {
   border-radius: 16px;
 }
 
-#buttonNavigate {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 55px;
-  margin-bottom: 84px;
-
-  > button {
-    width: 60px;
-    height: 60px;
-  }
-
-  > button:first-child {
-    background-image: var(--buttonArrowLeft);
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  > button:last-child {
-    background-image: var(--buttonArrowRight);
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
-
 .skill {
   display: grid;
   grid-template-columns: auto 108px;
@@ -270,7 +246,6 @@ main {
   > div:nth-child(1) {
     grid-column: 1;
     grid-row: 1/4;
-    background-image: url("/img/skillsIcons/html.png");
     background-size: contain;
     background-position: left center;
     background-repeat: no-repeat;
@@ -286,7 +261,6 @@ main {
     div {
       width: 12px;
       height: 12px;
-      background-image: var(--dotEmpty);
       background-size: cover;
     }
   }
@@ -294,6 +268,14 @@ main {
   div:nth-child(4) {
     color: var(--colorGray);
   }
+}
+
+.dotEmpty {
+  background-image: var(--dotEmpty);
+}
+
+.dotFilled {
+  background-image: var(--dotFilled);
 }
 
 #projects {
@@ -342,13 +324,31 @@ main {
   }
 }
 
-.footerInfo {
+#buttonsCarousel {
   display: grid;
-  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 55px;
+  margin-bottom: 84px;
+
+  > button {
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  > button:first-child {
+    background-image: var(--buttonArrowLeft);
+  }
+
+  > button:last-child {
+    background-image: var(--buttonArrowRight);
+  }
 }
 
 footer {
   display: grid;
+  place-items: center;
   width: 100vw;
   height: 400px;
   background-color: var(--colorMain);
@@ -358,22 +358,20 @@ footer {
 
   > div {
     display: grid;
-    place-self: center;
-    width: 100%;
     height: calc(100% - 120px);
     max-width: 1200px;
+    width: calc(100% - 240px);
     justify-content: space-between;
     grid-template-columns: repeat(2, auto);
 
-    > div {
-      place-self: start left;
+    > div:first-child {
       display: grid;
+      place-content: start;
       grid-row-gap: 30px;
-      grid-template-columns: max-content;
     }
 
-    > div {
-      place-self: end right;
+    > div:last-child {
+      place-self: end;
 
       > span {
         font-size: 1.6875rem;
@@ -384,6 +382,11 @@ footer {
       }
     }
   }
+}
+
+.footerInfo {
+  display: grid;
+  gap: 30px;
 }
 
 @media (max-width: 900px) and (min-width: 769px) {

@@ -6,22 +6,35 @@
     <meta content = "width=device-width, initial-scale=1" name = "viewport">
     <title>ITPortfolio</title>
     <link href = "css/projects.css" rel = "stylesheet">
+    <link href = "css/mobile/mobileProjects.css" rel = "stylesheet">
     <meta content = "IT portfolio with information about completed projects and technologies used in them."
           name = "description">
 
     <link href = "/favicon.ico" rel = "icon" sizes = "any">
     <link href = "/icon.svg" rel = "icon" type = "image/svg+xml">
     <link href = "icon.png" rel = "apple-touch-icon">
+
+    <link href = "https://fonts.googleapis.com" rel = "preconnect">
+    <link crossorigin href = "https://fonts.gstatic.com" rel = "preconnect">
+    <link href = "https://fonts.googleapis.com/css2?family=League+Gothic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel = "stylesheet">
+    <link href = "https://fonts.googleapis.com/css2?family=League+Gothic&family=League+Spartan:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel = "stylesheet">
+    <link href = "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel = "stylesheet">
   </head>
 
   <body>
     <header>
       <div class = "nav">
         <h3 class = "logo"><span>ITP</span><span>ortfolio</span></h3>
-        <div class = "links">
-          <a href = "index.html">HOME</a> <a class = "activePage" href = "#">PROJECTS</a>
-          <a href = "about.html">ABOUT</a> <a>CONTACT</a> <a>MESSAGES</a>
+        <div class = "links" id = "headerLinks">
+          <div>
+            <a href = "index.html">HOME</a> <a class = "activePage" href = "#">PROJECTS</a>
+            <a href = "about.html">ABOUT</a> <a>CONTACT</a> <a>MESSAGES</a>
+          </div>
         </div>
+        <button class = "button-grey" id = "hamburgerMenu"></button>
       </div>
       <div class = "center-element" id = "title">
         <h1>MY PROJECTS</h1>
@@ -29,89 +42,25 @@
       </div>
     </header>
     <main>
-      <dialog id = "new-project">
-        <button class = "button-grey" id = "button-cancel-project-creation"></button>
-        <div class = "center-element">
-          <div>
-            <label for = "inputProjectTitle">Project title</label> <input id = "inputProjectTitle" type = "text"> <span
-            id = "commentProjectTitle">Test</span>
-          </div>
-          <div>
-            <label for = "inputTechnologies">Technologies</label> <input id = "inputTechnologies"
-                                                                         placeholder = "html, css, javascript"
-                                                                         type = "text">
-            <span id = "commentTechnologies">Test 2</span>
-          </div>
-          <button class = "button-grey" id = "button-create-project"><span></span>Add project</button>
-        </div>
-      </dialog>
-      <button class = "button-grey" id = "button-add-project"><span></span>Add project</button>
-      <div class = "projects">
-        <div class = "project">
-          <div>
-            <div>Non-governmental organization</div>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-            </ul>
-          </div>
-          <button class = "button-grey"></button>
-        </div>
-        <div class = "project">
-          <div>
-            <div>Non-governmental organization</div>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-            </ul>
-          </div>
-          <button class = "button-grey"></button>
-        </div>
-        <div class = "project">
-          <div>
-            <div>Non-governmental organization</div>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-            </ul>
-          </div>
-          <button class = "button-grey"></button>
-        </div>
-        <div class = "project">
-          <div>
-            <div>Non-governmental organization</div>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-            </ul>
-          </div>
-          <button class = "button-grey"></button>
-        </div>
-        <div class = "project">
-          <div>
-            <div>Non-governmental organization</div>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-            </ul>
-          </div>
-          <button class = "button-grey"></button>
-        </div>
-      </div>
+      <dialog id = "new-project"></dialog>
+      <button class = "add button-grey" id = "buttonAddProject"><span></span>Add project</button>
+      <div id = "projects"></div>
     </main>
     <footer>
-      <div class = "links">
-        <a href = "index.html">HOME</a> <a class = "activePage" href = "#">PROJECTS</a> <a href = "about.html">ABOUT</a>
-        <a>CONTACT</a> <a>MESSAGES</a>
-      </div>
-      <div class = "footerInfo">
-        <div class = "footerInfo">
-          <span>jan_kowalski@gmail.com</span> <span>+123 456 789</span>
+      <div>
+        <div class = "links" id = "footerLinks">
+          <a href = "index.html">HOME</a> <a class = "activePage" href = "#">PROJECTS</a>
+          <a href = "about.html">ABOUT</a> <a>CONTACT</a> <a>MESSAGES</a>
         </div>
-        <span><span class = "logo"><span>ITP</span><span>ortfolio</span></span> © 2024</span>
+        <div class = "footerInfo">
+          <div class = "footerInfo">
+            <span>jan_kowalski@gmail.com</span> <span>+123 456 789</span>
+          </div>
+          <span><span class = "logo"><span>ITP</span><span>ortfolio</span></span> © 2024</span>
+        </div>
       </div>
     </footer>
-    <script src = "js/index/app.js"></script>
+    <script src = "js/index/webProjects.js" type = "module"></script>
   </body>
 
 </html>

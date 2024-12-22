@@ -20,9 +20,11 @@ function onclickHamburgerMenu() {
       $headerLinks.style.display = 'none';
     }
   }
-  $headerActiveLink.onclick = () => {
-    $headerButtonHamburgerMenu.style.backgroundImage = backgroundImageHamburgerMenuWhite
-    $headerLinks.style.display = 'none'
+  if (innerWidth <= 768) {
+    $headerActiveLink.onclick = () => {
+      $headerButtonHamburgerMenu.style.backgroundImage = backgroundImageHamburgerMenuWhite
+      $headerLinks.style.display = 'none'
+    }
   }
 }
 
