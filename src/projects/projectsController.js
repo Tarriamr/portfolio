@@ -1,4 +1,52 @@
 import {projects} from './projects.js'
+import {createProjectsComponent} from "./projectsComponent.js";
+import {NewProject} from "../../js/index/newProject.js";
+
+export function renderProjectsPage($parent) {
+  const $dialog = document.createElement('dialog');
+  $dialog.id = "new-project";
+
+  const onAddProject = (title, skills) => {
+    projects.push({title, skills});
+    document.body.style.overflow = "scroll";
+  };
+
+  const modalNewProject = new NewProject($dialog);
+  modalNewProject.windowNewProject(onAddProject);
+
+  const $addProjectButton = document.createElement('button');
+  $addProjectButton.id = 'buttonAddProject';
+  $addProjectButton.className = "add buttonGrey";
+  $addProjectButton.textContent = 'Add Project';
+  $addProjectButton.addEventListener('click', () => {
+    document.body.style.overflow = "hidden";
+    $dialog.showModal();
+    const $inputProjectTitle = document.querySelector('#inputProjectTitle');
+    const $inputTechnologies = document.querySelector('#inputTechnologies');
+
+    $inputProjectTitle.onkeyup = () => {
+      modalNewProject.checkProjectTitle();
+      modalNewProject.checkTechnologies();
+    }
+
+    $inputTechnologies.onkeyup = () => {
+      modalNewProject.checkProjectTitle();
+      modalNewProject.checkTechnologies();
+    }
+
+    $dialog.onkeydown = (event) => {
+      if (event.keyCode === 27) {
+        document.body.style.overflow = "scroll";
+        $inputProjectTitle.value = '';
+        $inputTechnologies.value = '';
+      }
+    }
+  });
+
+  const $projectsComponent = createProjectsComponent();
+  $parent.append($dialog, $addProjectButton, $projectsComponent);
+}
+
 
 let numberOfProjectsToShow = 3;
 

@@ -1,3 +1,5 @@
+import {projects} from "../../src/projects/projects.js";
+
 export class NewProject {
   validation = false;
 
@@ -5,7 +7,7 @@ export class NewProject {
     this.modal = modal;
   }
 
-  windowNewProject() {
+  windowNewProject(onAddProject) {
     const $buttonEsc = document.createElement('button');
     $buttonEsc.className = 'buttonGrey';
     $buttonEsc.id = 'buttonCancelProjectCreation';
@@ -49,6 +51,16 @@ export class NewProject {
     this.$buttonCreateProject = document.createElement('button');
     this.$buttonCreateProject.className = 'add buttonGrey';
     this.$buttonCreateProject.id = 'button-create-project';
+    this.$buttonCreateProject.onclick = () => {
+      const title = this.$inputProjectTitle.value;
+      const skills = this.$inputTechnologies.value.split(',');
+
+      onAddProject(title, skills);
+
+      this.$inputProjectTitle.value = '';
+      this.$inputTechnologies.value = '';
+      this.modal.close();
+    }
 
     const $buttonText = document.createTextNode('Add project');
     const $buttonSpan = document.createElement('span');

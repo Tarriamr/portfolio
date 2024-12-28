@@ -1,4 +1,4 @@
-import {renderProjects, setNumberOfProjectsToShow} from "./projects/projectsController.js";
+import {renderProjects, renderProjectsPage, setNumberOfProjectsToShow} from "./projects/projectsController.js";
 import {
   $headerButtonHamburgerMenu,
   $headerLinks,
@@ -7,32 +7,38 @@ import {
   hamburgerMenuClicked
 } from "../js/index/hamburgerMenu.js";
 import {projects} from "./projects/projects.js";
-import {renderHomePage} from "./homePage/homePageRendering.js";
+import {renderHomePage} from "./homePage/homePageController.js";
 
 
 const colorWhite = '#FFFFFF';
 const colorGray = '#ADB6C4'
 
-
 function init() {
   const $navLinks = document.querySelectorAll('.links>div>a');
-  const $homeButton = document.querySelectorAll('.homeButton');
-  const $projectsButton = document.querySelectorAll('.projectsButton');
-  const $aboutButton = document.querySelector('.aboutButton');
-  const $contactButton = document.querySelector('.contactButton');
-  const $messagesButton = document.querySelector('.messagesButton');
+  const $homeButtons = document.querySelectorAll('.homeButton');
+  const $projectsButtons = document.querySelectorAll('.projectsButton');
+  const $aboutButtons = document.querySelectorAll('.aboutButton');
+  const $contactButton = document.querySelectorAll('.contactButton');
+  const $messagesButton = document.querySelectorAll('.messagesButton');
 
-  $homeButton.onclick = () => {
-    renderHomePage();
-  };
+  const $main = document.querySelector("main");
 
-  $projectsButton.onclick = () => {
-    document.getElementById('homePage').style.display = 'none';
-    document.getElementById('projectsPage').style.display = 'grid';
-    displayProjectsPage();
-  };
+  $homeButtons.forEach(button => {
+    button.addEventListener('click', ()=>{
+      $main.replaceChildren();
+      renderHomePage($main);
+    });
+  });
 
-  $aboutButton.onclick = () => {
+  $projectsButtons.forEach(button => {
+    button.addEventListener('click', ()=>{
+      $main.replaceChildren();
+      renderProjectsPage($main);
+    })
+  });
+
+  $aboutButtons.onclick = () => {
+    $main.replaceChildren();
   };
 
   $contactButton.onclick = () => {
@@ -52,7 +58,7 @@ function init() {
     };
   });
 
-  renderHomePage();
+  renderHomePage($main);
 
   window.onresize = () => {
     resizeElements($headerLinks, $headerButtonHamburgerMenu, hamburgerMenuClicked);

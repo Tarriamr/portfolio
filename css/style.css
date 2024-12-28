@@ -181,7 +181,7 @@ header {
   }
 }
 
-main > div {
+main > div > div {
   place-self: center;
   display: grid;
   grid-template-columns: 1fr;
@@ -278,7 +278,7 @@ main > div {
   background-image: var(--dotFilled);
 }
 
-.projectsContainer {
+.projectsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, 360px);
   grid-template-rows: 1fr;
