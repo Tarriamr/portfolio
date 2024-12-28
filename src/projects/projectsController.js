@@ -7,10 +7,10 @@ function onAddProject(title, skills) {
   addProject(title, skills);
   document.body.style.overflow = "scroll";
   const $grid = document.querySelector(".projectsGrid");
-  renderGrid($grid);
+  renderGrid($grid, true);
 }
 
-export function renderProjectsPage($parent) {
+export function renderProjectsPage() {
   const $dialog = document.createElement('dialog');
   $dialog.id = "new-project";
 
@@ -19,7 +19,7 @@ export function renderProjectsPage($parent) {
 
   const $addProjectButton = document.createElement('button');
   $addProjectButton.id = 'buttonAddProject';
-  $addProjectButton.className = "add buttonGrey";
+  $addProjectButton.className = "add buttonGrey addProjectButton";
   $addProjectButton.textContent = 'Add Project';
   $addProjectButton.addEventListener('click', () => {
     document.body.style.overflow = "hidden";
@@ -46,6 +46,9 @@ export function renderProjectsPage($parent) {
     }
   });
 
-  const $projectsComponent = createProjectsComponent();
+  const $projectsComponent = createProjectsComponent(false, true);
+
+  const $parent = document.createDocumentFragment();
   $parent.append($dialog, $addProjectButton, $projectsComponent);
+  return $parent;
 }

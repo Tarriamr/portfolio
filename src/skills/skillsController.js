@@ -41,7 +41,7 @@ export function createMySkills() {
   $h4.textContent = "My Skills";
 
   const $container = document.createElement("div");
-  $container.id = "skillsParent";
+  $container.className = "skillsContainer";
   skills.forEach((skill) => {
     const $item = createSingleSkillComponent(skill, $container);
     $container.append($item);
@@ -49,7 +49,6 @@ export function createMySkills() {
 
   const $component = document.createElement("div");
   $component.className = "gridTemplate grid-rows";
-  $component.id = "mySkills";
   $component.append($h4, $container);
   return $component;
 }

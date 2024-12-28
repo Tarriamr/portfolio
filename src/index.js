@@ -1,4 +1,3 @@
-import {renderProjectsPage} from "./projects/projectsController.js";
 import {
   $headerButtonHamburgerMenu,
   $headerLinks,
@@ -6,63 +5,12 @@ import {
   backgroundImageHamburgerMenuWhite,
   hamburgerMenuClicked
 } from "./hamburgerMenu.js";
-import {renderHomePage} from "./homePage/homePageController.js";
-
-const colorWhite = '#FFFFFF';
-const colorGray = '#ADB6C4'
+import {createNavigation} from "./navigation.js";
 
 function init() {
-  const $navLinks = document.querySelectorAll('.links>div>a');
-  const $homeButtons = document.querySelectorAll('.homeButton');
-  const $projectsButtons = document.querySelectorAll('.projectsButton');
-  const $aboutButtons = document.querySelectorAll('.aboutButton');
-  const $contactButton = document.querySelectorAll('.contactButton');
-  const $messagesButton = document.querySelectorAll('.messagesButton');
-
-  const $main = document.querySelector("main");
-
-  $homeButtons.forEach(button => {
-    button.addEventListener('click', ()=>{
-      $main.replaceChildren();
-      renderHomePage($main);
-    });
-  });
-
-  $projectsButtons.forEach(button => {
-    button.addEventListener('click', ()=>{
-      $main.replaceChildren();
-      renderProjectsPage($main);
-    })
-  });
-
-  $aboutButtons.onclick = () => {
-    $main.replaceChildren();
-  };
-
-  $contactButton.onclick = () => {
-  };
-
-  $messagesButton.onclick = () => {
-  };
-
-  $navLinks.forEach(link => {
-    link.onclick = function (event) {
-      $navLinks.forEach(link => link.style.color = colorWhite);
-
-      event.preventDefault();
-
-      const clickedClass = document.querySelectorAll(`.${link.className}`);
-      clickedClass.forEach(link => link.style.color = colorGray);
-    };
-  });
-
-  renderHomePage($main);
-
-  /*
-  grid-template-rows: 1fr 0 0 0 0 0;
-    row-gap: 0px;
-    overflow: hidden;
-   */
+  const navigation = createNavigation();
+  navigation.init();
+  navigation.renderHome();
 
   window.onresize = () => {
     resizeElements($headerLinks, $headerButtonHamburgerMenu, hamburgerMenuClicked);
