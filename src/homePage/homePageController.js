@@ -14,8 +14,7 @@ export function renderHomePage() {
   const $p = document.createElement("p");
   $p.textContent = aboutMe;
   const $aboutMe = document.createElement("div");
-  $aboutMe.className = "gridTemplate";
-  $aboutMe.id = "aboutMe";
+  $aboutMe.className = "gridTemplate aboutMe";
   $aboutMe.append($h4, $p);
 
   const $mySkills = createMySkills();

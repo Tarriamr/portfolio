@@ -1,13 +1,5 @@
 @media (max-width: 768px) {
 
-  body {
-    justify-content: start;
-  }
-
-  header {
-    min-width: 320px;
-  }
-
   .nav {
     width: calc(100% - 20px);
     min-width: 288px;
@@ -54,7 +46,13 @@
     }
   }
 
-  main {
+
+
+  .header {
+    min-width: 320px;
+  }
+
+  .main {
     width: 100%;
     min-width: 320px;
   }

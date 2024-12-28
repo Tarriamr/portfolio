@@ -6,8 +6,9 @@
     <title>ITPortfolio</title>
     <link href = "css/theme.css" rel = "stylesheet">
     <link href = "css/style.css" rel = "stylesheet">
-    <link href = "css/mobile/mobileStyle.css" rel = "stylesheet">
     <link href = "css/projects.css" rel = "stylesheet">
+    <link href = "css/mobile/mobileTheme.css" rel = "stylesheet">
+    <link href = "css/mobile/mobileStyle.css" rel = "stylesheet">
     <meta content = "IT portfolio with information about completed projects and technologies used in them."
           name = "description">
 
@@ -26,38 +27,38 @@
   </head>
 
   <body>
-    <header>
+    <header class = "header">
       <div class = "nav">
-        <h3 class = "logo"><span>ITP</span><span>ortfolio</span></h3>
+        <h3 class = "logo"><span class = "logo-origin">ITP</span><span class = "logo-end">ortfolio</span></h3>
         <div class = "links headerLinks">
-          <div>
+          <div class = "links-container">
             <a class = "homeButton">HOME</a> <a class = "projectsButton">PROJECTS</a> <a class = "aboutButton">ABOUT</a>
             <a class = "contactButton">CONTACT</a> <a class = "messagesButton">MESSAGES</a>
           </div>
         </div>
         <button class = "buttonGrey" id = "hamburgerMenu"></button>
       </div>
-      <div class = "centerElement" id = "title">
-        <h1>JAN KOWALSKI</h1>
-        <h2>WEB-DESIGNER</h2>
+      <div class = "centerElement">
+        <h1 class = "title-name">JAN KOWALSKI</h1>
+        <h2 class = "title-profession">WEB-DESIGNER</h2>
       </div>
     </header>
 
-    <main class="main"></main>
+    <main class = "main"></main>
 
-    <footer>
-      <div>
-        <div class = "links footerLinks">
-          <div>
+    <footer class = "footer">
+      <div class = "footer-container">
+        <div class = "links footerLinksContainer">
+          <div class = "links-container footerLinks">
             <a class = "homeButton">HOME</a> <a class = "projectsButton">PROJECTS</a> <a class = "aboutButton">ABOUT</a>
             <a class = "contactButton">CONTACT</a> <a class = "messagesButton">MESSAGES</a>
           </div>
         </div>
-        <div class = "footerInfo">
+        <div class = "footerInfo contactData">
           <div class = "footerInfo">
             <span>jan_kowalski@gmail.com</span> <span>+123 456 789</span>
           </div>
-          <span><span class = "logo"><span>ITP</span><span>ortfolio</span></span> © 2024</span>
+          <span class="logoData"><span class = "logo logoFooter"><span class = "logo-origin">ITP</span><span class = "logo-end">ortfolio</span></span> © 2024</span>
         </div>
       </div>
     </footer>

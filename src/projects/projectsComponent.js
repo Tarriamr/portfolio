@@ -34,14 +34,14 @@ function createCarousel($grid, showDeleteButton) {
   $carousel.className = "buttonsCarousel";
 
   const $leftButton = document.createElement("button");
-  $leftButton.className = "buttonGrey";
+  $leftButton.className = "buttonGrey buttonsCarousel-left";
   $leftButton.onclick = () => {
     moveFirstProjectToEnd();
     renderGrid($grid, showDeleteButton);
   };
 
   const $rightButton = document.createElement("button");
-  $rightButton.className = "buttonGrey";
+  $rightButton.className = "buttonGrey buttonsCarousel-right";
   $rightButton.onclick = () => {
     moveLastProjectToBeginning();
     renderGrid($grid, showDeleteButton);
@@ -54,9 +54,9 @@ function createCarousel($grid, showDeleteButton) {
 
 function resizeHandler($carousel) {
   if ($carousel) {
-    const hide  = shouldHideCarousel();
+    const hide = shouldHideCarousel();
     if (hide) {
-      $carousel.className += ' hide';
+      $carousel.classList.add('hide');
     } else {
       $carousel.className = 'buttonsCarousel';
     }

@@ -3,7 +3,7 @@ export const projects = [
   {id: generateId(), title: 'Test', skills: ['Firefox', 'Java']},
   {id: generateId(), title: 'Cross vs circle', skills: ['Java']},
   {id: generateId(), title: 'Portfolio', skills: ['HTML', 'JS', 'CSS']},
-  {id: generateId(), title: 'Test2', skills: ['HTML', 'JS', 'CSS']}
+  {id: generateId(), title: 'Test2', skills: ['HTML', 'JS', 'CSS','4','5','6','7','8']}
 ];
 
 function generateId() {
