@@ -48,21 +48,21 @@ body {
   text-shadow: none;
 }
 
-.grid-rows {
+.gridTemplate {
   display: grid;
   grid-template-columns: auto;
   grid-auto-rows: auto;
   row-gap: 16px;
 }
 
-.center-element {
+.centerElement {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.button-grey {
+.buttonGrey {
   position: relative;
   padding: 0;
   border-radius: 8px;
@@ -108,7 +108,7 @@ a:visited {
   color: var(--colorWhite);
 }
 
-a.activePage {
+a.homeButton {
   color: var(--colorGray);
 }
 
@@ -148,7 +148,7 @@ header {
   }
 }
 
-#headerLinks {
+.links {
   align-content: center;
 
   div {
@@ -193,7 +193,7 @@ main > div {
   justify-items: center;
 }
 
-#main-description-and-skills {
+#mainDescriptionAndSkills {
   gap: 65px;
   margin-top: 84px;
   max-width: 958px;
@@ -220,7 +220,7 @@ main > div {
   }
 }
 
-#main-description-and-skills img {
+#mainDescriptionAndSkills img {
   object-fit: cover;
   object-position: 0 0;
   width: 100%;
@@ -288,7 +288,7 @@ main > div {
 }
 
 .project {
-  // display: none;
+/ / display: none;
   width: 360px;
   height: 460px;
   border-radius: 16px;

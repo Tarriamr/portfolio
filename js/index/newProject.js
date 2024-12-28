@@ -7,12 +7,12 @@ export class NewProject {
 
   windowNewProject() {
     const $buttonEsc = document.createElement('button');
-    $buttonEsc.className = 'button-grey';
+    $buttonEsc.className = 'buttonGrey';
     $buttonEsc.id = 'buttonCancelProjectCreation';
     this.esc($buttonEsc);
 
     const $divContainer = document.createElement('div');
-    $divContainer.className = 'center-element';
+    $divContainer.className = 'centerElement';
 
     const $divProjectTitle = document.createElement('div');
 
@@ -47,7 +47,7 @@ export class NewProject {
     $divTechnologies.append($labelInputTechnologies, this.$inputTechnologies, this.$commentTechnologies);
 
     this.$buttonCreateProject = document.createElement('button');
-    this.$buttonCreateProject.className = 'add button-grey';
+    this.$buttonCreateProject.className = 'add buttonGrey';
     this.$buttonCreateProject.id = 'button-create-project';
 
     const $buttonText = document.createTextNode('Add project');

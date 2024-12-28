@@ -6,9 +6,9 @@ function createProjectElement(project) {
   const ul = document.createElement('ul');
   project.skills.forEach(skill => {
     const li = document.createElement('li');
-    li.innerText = skill;
+    li.innerText = skill.toString();
     ul.append(li);
-  })
+  });
 
   const divTitle = document.createElement('div');
   divTitle.textContent = project.title;
@@ -17,7 +17,7 @@ function createProjectElement(project) {
   divContainer.append(divTitle, ul);
 
   const buttonRemove = document.createElement('button');
-  buttonRemove.className = 'button-grey';
+  buttonRemove.className = 'buttonGrey';
 
   const divProject = document.createElement('div')
   divProject.append(divContainer, buttonRemove);
@@ -33,11 +33,13 @@ export function renderProjects() {
   if (projects.length === 0) {
     $container.textContent = 'There are no projects to display.';
   } else {
-    for (let i = 0; i <= numberOfProjectsToShow; i++) {
+    for (let i = 0; i < numberOfProjectsToShow; i++) {
       const project = projects[i];
       $container.appendChild(createProjectElement(project));
     }
   }
+
+  initCarousel();
 }
 
 function removeProjects() {
@@ -49,7 +51,7 @@ function removeProjects() {
 
 export function setNumberOfProjectsToShow(value = undefined) {
 
-  if(!!value) {
+  if (!!value) {
     numberOfProjectsToShow = value;
   } else if (innerWidth >= 1440) {
     numberOfProjectsToShow = 3;
@@ -62,8 +64,7 @@ export function setNumberOfProjectsToShow(value = undefined) {
   }
 }
 
-export
-function initCarousel() {
+export function initCarousel() {
   const $buttonsCarousel = document.querySelector('#buttonsCarousel');
   const $leftButton = document.querySelector('#buttonsCarousel button:first-child');
   const $rightButton = document.querySelector('#buttonsCarousel button:last-child');

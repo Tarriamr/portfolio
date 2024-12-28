@@ -3,7 +3,7 @@ import {shownProjects, uploadProjects} from "./projects.js";
 import {$headerButtonHamburgerMenu, $headerLinks, hamburgerMenuClicked} from "./hamburgerMenu.js";
 import {NewProject} from "./newProject.js";
 
-const $footerLinks = document.querySelector('footer .links');
+const $footerLinks = document.querySelector('.footerLinks');
 const $newProject = document.querySelector('#');
 const $buttonAddProject = document.querySelector('#buttonAddProject');
 

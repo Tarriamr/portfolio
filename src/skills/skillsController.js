@@ -13,7 +13,7 @@ function renderDotYears(years, $dotYears) {
 }
 
 function renderSkill(skill) {
-  const $skills = document.querySelector('#skills');
+  const $skillsParent = document.querySelector('#skillsParent');
   const $dotYears = document.createDocumentFragment();
 
   const $divSkillLogo = document.createElement('div');
@@ -33,8 +33,8 @@ function renderSkill(skill) {
   $skill.append($divSkillLogo, $divSkillName, $divDotYears, $divYears);
   $skill.className = 'skill';
 
-  if ($skills !== null) {
-    $skills.append($skill);
+  if ($skillsParent !== null) {
+    $skillsParent.append($skill);
   }
 }
 

@@ -1,34 +1,58 @@
-import { renderSkills } from "./skills/skillsController.js";
-import {setNumberOfProjectsToShow, renderProjects, initCarousel} from "./projects/projectsController.js";
+import {renderProjects, setNumberOfProjectsToShow} from "./projects/projectsController.js";
 import {
   $headerButtonHamburgerMenu,
   $headerLinks,
-  backgroundImageHamburgerMenuGold, backgroundImageHamburgerMenuWhite,
+  backgroundImageHamburgerMenuGold,
+  backgroundImageHamburgerMenuWhite,
   hamburgerMenuClicked
 } from "../js/index/hamburgerMenu.js";
 import {projects} from "./projects/projects.js";
-import {homePageController} from "./homePageController.js";
+import {renderHomePage} from "./homePage/homePageRendering.js";
+
+
+const colorWhite = '#FFFFFF';
+const colorGray = '#ADB6C4'
+
 
 function init() {
-  const $homeButton = document.getElementById('homeButton');
-  const $projectsButton = document.getElementById('projectsButton');
+  const $navLinks = document.querySelectorAll('.links>div>a');
+  const $homeButton = document.querySelectorAll('.homeButton');
+  const $projectsButton = document.querySelectorAll('.projectsButton');
+  const $aboutButton = document.querySelector('.aboutButton');
+  const $contactButton = document.querySelector('.contactButton');
+  const $messagesButton = document.querySelector('.messagesButton');
 
+  $homeButton.onclick = () => {
+    renderHomePage();
+  };
 
-  $homeButton.addEventListener('click', ()=>{
-    document.getElementById('homePage').style.display = 'block';
-    document.getElementById('projectsPage').style.display = 'none';
-    homePageController.onOpen();
-  });
-
-  $projectsButton.addEventListener('click', ()=>{
+  $projectsButton.onclick = () => {
     document.getElementById('homePage').style.display = 'none';
-    document.getElementById('projectsPage').style.display = 'block';
+    document.getElementById('projectsPage').style.display = 'grid';
     displayProjectsPage();
+  };
+
+  $aboutButton.onclick = () => {
+  };
+
+  $contactButton.onclick = () => {
+  };
+
+  $messagesButton.onclick = () => {
+  };
+
+  $navLinks.forEach(link => {
+    link.onclick = function (event) {
+      $navLinks.forEach(link => link.style.color = colorWhite);
+
+      event.preventDefault();
+
+      const clickedClass = document.querySelectorAll(`.${link.className}`);
+      clickedClass.forEach(link => link.style.color = colorGray);
+    };
   });
 
-  homePageController.onOpen();
-
-  // displayHomePage();
+  renderHomePage();
 
   window.onresize = () => {
     resizeElements($headerLinks, $headerButtonHamburgerMenu, hamburgerMenuClicked);
@@ -39,7 +63,7 @@ function init() {
 }
 
 function resizeElements($headerLinks, $headerButtonHamburgerMenu, hamburgerMenuClicked) {
-  const $footerLinks = document.querySelector('footer .links');
+  const $footerLinks = document.querySelector('.footerLinks');
 
   if (innerWidth > 768) {
     $headerLinks.style.display = 'grid';
@@ -57,17 +81,9 @@ function resizeElements($headerLinks, $headerButtonHamburgerMenu, hamburgerMenuC
   }
 }
 
-function displayHomePage() {
-  renderSkills();
-  setNumberOfProjectsToShow();
-  renderProjects();
-  initCarousel();
-}
-
 function displayProjectsPage() {
   setNumberOfProjectsToShow(projects.length);
   renderProjects();
 }
 
 init();
-
