@@ -1,5 +1,3 @@
-import {projects} from "../../src/projects/projects.js";
-
 export class NewProject {
   validation = false;
 
@@ -108,12 +106,6 @@ export class NewProject {
       $commentTechnologies.textContent = '';
       $inputTechnologies.style.borderColor = '#1F2041';
       this.validation = true;
-    }
-  }
-
-  addNewProject(projectTitle, technologies) {
-    if (this.validation === true) {
-      this.esc(this.$buttonCreateProject);
     }
   }
 }

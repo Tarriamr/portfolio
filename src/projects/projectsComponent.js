@@ -1,59 +1,43 @@
-import {projects} from "./projects.js";
+import {moveFirstProjectToEnd, moveLastProjectToBeginning} from "./projects.js";
+import {renderGrid} from "./renderGrid.js";
 
-export function createProjectsComponent() {
+export function createProjectsComponent(showCarousel = false) {
   const $projectsContainer = document.createElement("div");
   $projectsContainer.className = "projectsContainer";
 
   const $grid = document.createElement("div");
   $grid.className = "projectsGrid";
+  $projectsContainer.append($grid);
 
-  if (projects.length === 0) {
-    $projectsContainer.textContent = 'There are no projects to display.';
-  } else {
-    for (let i = 0; i < projects.length; i++) {
-      const project = projects[i];
-      $grid.appendChild(createProjectElement(project));
-    }
-
-    $projectsContainer.append($grid);
-  }
-
-  const showCarousel = true;
+  renderGrid($grid);
 
   if (showCarousel) {
-    const $buttonsCarousel = document.createElement("div");
-    $buttonsCarousel.id = "buttonsCarousel";
-    const $leftButton = document.createElement("button");
-    $leftButton.className = "buttonGrey";
-    const $rightButton = document.createElement("button");
-    $rightButton.className = "buttonGrey";
-    $buttonsCarousel.append($leftButton, $rightButton);
-
-    $projectsContainer.append($buttonsCarousel);
+    const $carousel = createCarousel($grid);
+    $projectsContainer.append($carousel);
   }
 
   return $projectsContainer;
 }
 
-function createProjectElement(project) {
-  const ul = document.createElement('ul');
-  project.skills.forEach(skill => {
-    const li = document.createElement('li');
-    li.innerText = skill.toString();
-    ul.append(li);
-  });
+function createCarousel($grid) {
+  const $carousel = document.createElement("div");
+  $carousel.id = "buttonsCarousel";
 
-  const divTitle = document.createElement('div');
-  divTitle.textContent = project.title;
+  const $leftButton = document.createElement("button");
+  $leftButton.className = "buttonGrey";
+  $leftButton.onclick = () => {
+    moveFirstProjectToEnd();
+    renderGrid($grid);
+  };
 
-  const divContainer = document.createElement('div');
-  divContainer.append(divTitle, ul);
+  const $rightButton = document.createElement("button");
+  $rightButton.className = "buttonGrey";
+  $rightButton.onclick = () => {
+    moveLastProjectToBeginning();
+    renderGrid($grid);
+  };
 
-  const buttonRemove = document.createElement('button');
-  buttonRemove.className = 'buttonGrey';
+  $carousel.append($leftButton, $rightButton);
 
-  const divProject = document.createElement('div')
-  divProject.append(divContainer, buttonRemove);
-  divProject.className = 'project';
-  return divProject;
+  return $carousel;
 }

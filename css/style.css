@@ -400,3 +400,9 @@ footer {
 .projectsPage {
   display: none;
 }
+
+.projectSkillsList{
+  max-height: 280px;
+  height: 280px;
+  overflow: auto;
+}

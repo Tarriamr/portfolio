@@ -1,24 +1,12 @@
-import {renderAboutMe} from "../aboutMe/aboutMeRendering.js";
-import {renderMySkills} from "../skills/mySkillsRendering.js";
-import {renderProjects, setNumberOfProjectsToShow} from "../projects/projectsController.js";
+import {createMySkills} from "../skills/skillsController.js";
 import {createProjectsComponent} from "../projects/projectsComponent.js";
 
-function homePageController() {
-  renderAboutMe();
-  renderMySkills();
-
-  // setNumberOfProjectsToShow();
-  // renderProjects();
-
-  const $projectRemoveButton = document.querySelectorAll(".project button");
-  $projectRemoveButton.forEach(button => {
-    button.style.display = "none";
-  })
-}
+const aboutMe = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.";
 
 export function renderHomePage($parent) {
   const $mainFragment = document.createDocumentFragment();
 
+  // TODO remove?
   const $homePage = document.createElement("div");
   $homePage.id = "homePage";
 
@@ -29,24 +17,33 @@ export function renderHomePage($parent) {
   const $profilePhoto = document.createElement("img");
   $profilePhoto.alt = "Profile photo";
   $profilePhoto.src = "img/male.jpg";
+
   const $aboutAndSkillsContainer = document.createElement("div");
   $aboutAndSkillsContainer.className = "gridTemplate";
 
   const $aboutMe = document.createElement("div");
   $aboutMe.className = "gridTemplate";
   $aboutMe.id = "aboutMe";
-  const $mySkills = document.createElement("div");
-  $mySkills.className = "gridTemplate";
-  $mySkills.id = "mySkills";
+
+  const $mySkills = createMySkills();
 
   $aboutAndSkillsContainer.append($aboutMe, $mySkills);
   $mainDescriptionAndSkillsContainer.append($profilePhoto, $aboutAndSkillsContainer);
 
-  const $projectsComponent = createProjectsComponent();
+  const $projectsComponent = createProjectsComponent(true);
 
   $homePage.append($mainDescriptionAndSkillsContainer, $projectsComponent);
   $mainFragment.append($homePage);
   $parent.append($mainFragment);
 
-  homePageController();
+  const $h4 = document.createElement("h4");
+  $h4.textContent = "About me";
+  const $p = document.createElement("p");
+  $p.textContent = aboutMe;
+  $aboutMe.append($h4, $p);
+
+  const $projectRemoveButton = document.querySelectorAll(".project button");
+  $projectRemoveButton.forEach(button => {
+    button.style.display = "none";
+  })
 }

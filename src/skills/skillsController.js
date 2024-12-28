@@ -1,3 +1,4 @@
+// TODO pass skills as a parameter
 import { skills } from "./skills.js";
 
 function renderDotYears(years, $dotYears) {
@@ -12,8 +13,7 @@ function renderDotYears(years, $dotYears) {
   }
 }
 
-function renderSkill(skill) {
-  const $skillsParent = document.querySelector('#skillsParent');
+function createSingleSkillComponent(skill) {
   const $dotYears = document.createDocumentFragment();
 
   const $divSkillLogo = document.createElement('div');
@@ -33,14 +33,23 @@ function renderSkill(skill) {
   $skill.append($divSkillLogo, $divSkillName, $divDotYears, $divYears);
   $skill.className = 'skill';
 
-  if ($skillsParent !== null) {
-    $skillsParent.append($skill);
-  }
+  return $skill;
 }
 
-export function renderSkills() {
+export function createMySkills() {
+  const $h4 = document.createElement("h4");
+  $h4.textContent = "My Skills";
+
+  const $container = document.createElement("div");
+  $container.id = "skillsParent";
   skills.forEach((skill) => {
-    renderSkill(skill);
+    const $item = createSingleSkillComponent(skill, $container);
+    $container.append($item);
   })
-}
 
+  const $component = document.createElement("div");
+  $component.className = "gridTemplate grid-rows";
+  $component.id = "mySkills";
+  $component.append($h4, $container);
+  return $component;
+}

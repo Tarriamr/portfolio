@@ -1,14 +1,12 @@
-import {renderProjects, renderProjectsPage, setNumberOfProjectsToShow} from "./projects/projectsController.js";
+import {renderProjectsPage} from "./projects/projectsController.js";
 import {
   $headerButtonHamburgerMenu,
   $headerLinks,
   backgroundImageHamburgerMenuGold,
   backgroundImageHamburgerMenuWhite,
   hamburgerMenuClicked
-} from "../js/index/hamburgerMenu.js";
-import {projects} from "./projects/projects.js";
+} from "./hamburgerMenu.js";
 import {renderHomePage} from "./homePage/homePageController.js";
-
 
 const colorWhite = '#FFFFFF';
 const colorGray = '#ADB6C4'
@@ -60,10 +58,14 @@ function init() {
 
   renderHomePage($main);
 
+  /*
+  grid-template-rows: 1fr 0 0 0 0 0;
+    row-gap: 0px;
+    overflow: hidden;
+   */
+
   window.onresize = () => {
     resizeElements($headerLinks, $headerButtonHamburgerMenu, hamburgerMenuClicked);
-    setNumberOfProjectsToShow();
-    renderProjects();
   }
   resizeElements($headerLinks, $headerButtonHamburgerMenu, hamburgerMenuClicked);
 }
@@ -85,11 +87,6 @@ function resizeElements($headerLinks, $headerButtonHamburgerMenu, hamburgerMenuC
     $headerButtonHamburgerMenu.style.display = 'initial';
     $footerLinks.style.display = 'none';
   }
-}
-
-function displayProjectsPage() {
-  setNumberOfProjectsToShow(projects.length);
-  renderProjects();
 }
 
 init();
