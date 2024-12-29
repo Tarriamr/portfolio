@@ -17,23 +17,27 @@ function addListeners(links, renderPageFunction) {
 }
 
 function init() {
-  const $navLinks = document.querySelectorAll('.links>div>a');
+  const $navLinks = document.querySelectorAll('.links a');
   const $homeButtons = document.querySelectorAll('.homeButton');
   const $projectsButtons = document.querySelectorAll('.projectsButton');
   const $aboutButtons = document.querySelectorAll('.aboutButton');
   const $contactButton = document.querySelectorAll('.contactButton');
   const $messagesButton = document.querySelectorAll('.messagesButton');
 
-  const $main = getMain();
-
   addListeners($homeButtons, renderHomePage);
   addListeners($projectsButtons, renderProjectsPage);
-  addListeners($aboutButtons, ()=> {getMain().replaceChildren();})
-  addListeners($contactButton, ()=> {getMain().replaceChildren();})
-  addListeners($messagesButton, ()=> {getMain().replaceChildren();})
+  addListeners($aboutButtons, () => {
+    getMain().replaceChildren();
+  })
+  addListeners($contactButton, () => {
+    getMain().replaceChildren();
+  })
+  addListeners($messagesButton, () => {
+    getMain().replaceChildren();
+  })
 
   $navLinks.forEach(link => {
-    link.addEventListener('click', (event) =>  {
+    link.addEventListener('click', (event) => {
       $navLinks.forEach(link => link.style.color = colorWhite);
       event.preventDefault();
       const clickedClass = document.querySelectorAll(`.${link.className}`);

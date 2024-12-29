@@ -19,12 +19,12 @@ function init() {
 }
 
 function resizeElements($headerLinks, $headerButtonHamburgerMenu, hamburgerMenuClicked) {
-  const $footerLinks = document.querySelector('.footerLinks');
+  const $footerLinksContainer = document.querySelector('.footerLinksContainer');
 
   if (innerWidth > 768) {
     $headerLinks.style.display = 'grid';
     $headerButtonHamburgerMenu.style.display = 'none';
-    $footerLinks.style.display = 'grid';
+    $footerLinksContainer.style.display = 'grid';
   } else {
     hamburgerMenuClicked
       ? $headerLinks.style.display = 'grid'
@@ -33,7 +33,7 @@ function resizeElements($headerLinks, $headerButtonHamburgerMenu, hamburgerMenuC
       ? $headerButtonHamburgerMenu.style.backgroundImage = backgroundImageHamburgerMenuGold
       : $headerButtonHamburgerMenu.style.backgroundImage = backgroundImageHamburgerMenuWhite;
     $headerButtonHamburgerMenu.style.display = 'initial';
-    $footerLinks.style.display = 'none';
+    $footerLinksContainer.style.display = 'none';
   }
 }
 

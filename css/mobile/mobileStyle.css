@@ -1,22 +1,17 @@
 @media (max-width: 768px) {
 
+  .header {
+    min-width: 320px;
+  }
+
   .nav {
     width: calc(100% - 20px);
     min-width: 288px;
     margin-top: 10px;
   }
 
-  .logo {
-    > span:last-child {
-      display: none;
-    }
-  }
-
-  #hamburgerMenu {
-    background-color: unset;
-    box-shadow: none;
-    width: 50px;
-    height: 50px;
+  .logo-end {
+    display: none;
   }
 
   .links {
@@ -32,24 +27,25 @@
     border-style: solid;
     border-color: var(--colorBackground);
     box-shadow: var(--colorShadowWhite) 0 4px 4px 0;
-
-    > div {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 30px;
-      width: max-content;
-      margin-left: 37px;
-
-      a {
-        line-height: 20px;
-      }
-    }
   }
 
+  .links-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    width: max-content;
+    margin-left: 37px;
+  }
 
+  .links-container a {
+    line-height: 20px;
+  }
 
-  .header {
-    min-width: 320px;
+  #hamburgerMenu {
+    background-color: unset;
+    box-shadow: none;
+    width: 50px;
+    height: 50px;
   }
 
   .main {
@@ -57,60 +53,68 @@
     min-width: 320px;
   }
 
-  #mainDescriptionAndSkills {
+  .homePage-content {
     width: calc(100% - 32px);
     min-width: 288px;
-
-    > div {
-      > div:last-child {
-        row-gap: 40px;
-
-        > div {
-          grid-template-columns: 100%;
-          row-gap: 36px;
-          place-self: center;
-        }
-      }
-    }
   }
 
-  #projects {
+  .skillsContainer {
     grid-template-columns: 100%;
-    place-items: center;
+    row-gap: 36px;
+    place-self: center;
+  }
+
+  .projectsContainer {
+
+  }
+
+  .projectsContainer {
+    /*grid-template-columns: 100%;*/
+    /*place-items: center;*/
+    /*row-gap: 41px;*/
+    /*min-width: 300px;*/
+  }
+
+  .homePage-showSingleProjectRow {
+    grid-template-rows: max-content;
     row-gap: 41px;
-    min-width: 300px;
+    place-items: center;
+  }
+
+  .homePage-showSingleProjectRow > *:nth-child(n + 4) {
+    display: none;
   }
 
   .project {
     width: 300px;
-
-    > div {
-      width: 250px;
-
-      > ul {
-        font-size: 16px;
-      }
-    }
   }
 
-  footer {
+  .project-container {
+    width: 250px;
+  }
+
+  .project-skillsList {
+    font-size: 16px;
+  }
+
+  .footer {
     min-width: 320px;
     height: 232px;
-
-    > div {
-      width: calc(100% - 36px);
-      grid-template-columns: 1fr;
-      place-content: center;
-
-      > div:last-child {
-        place-self: center;
-
-        .logo {
-          > span:last-child {
-            display: initial;
-          }
-        }
-      }
-    }
   }
+
+  .footer-container {
+    width: calc(100% - 36px);
+    grid-template-columns: 1fr;
+    place-content: center;
+  }
+
+  .contactData{
+    place-self: center;
+    gap: 12px;
+  }
+
+  .footer .logo-end {
+    display: initial;
+  }
+
 }

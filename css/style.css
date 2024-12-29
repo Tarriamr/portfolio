@@ -212,10 +212,20 @@
   width: calc(100% - 278px);
 }
 
-.homePage-showSingleProjectRow {
-  grid-template-rows: 1fr 0 0 0 0;
-  row-gap: 0;
-  overflow: hidden;
+.homePage-showSingleProjectRow > *:nth-child(n + 4) {
+  display: none;
+}
+
+@media (max-width: 1439px) and (min-width: 1039px) {
+  .homePage-showSingleProjectRow > *:nth-child(n + 3) {
+    display: none;
+  }
+}
+
+@media (max-width: 1038px) and (min-width: 769px) {
+  .homePage-showSingleProjectRow > *:nth-child(n + 2) {
+    display: none;
+  }
 }
 
 .project {
@@ -333,6 +343,8 @@
 }
 
 .footerLinks {
+  display: grid;
+  place-content: start;
   grid-template-columns: 1fr;
 }
 
