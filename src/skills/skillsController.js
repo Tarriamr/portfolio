@@ -1,4 +1,3 @@
-// TODO pass skills as a parameter
 import {skills} from "./skills.js";
 
 function renderDotYears(years, $dotYears) {

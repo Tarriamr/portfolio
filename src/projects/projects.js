@@ -6,7 +6,7 @@ export const projects = [
   {id: generateId(), title: 'Test2', skills: ['HTML', 'JS', 'CSS','4','5','6','7','8']}
 ];
 
-function generateId() {
+export function generateId() {
   return crypto.randomUUID();
 }
 

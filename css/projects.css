@@ -96,12 +96,15 @@
   padding: 0;
   background-color: unset;
   outline: 0;
+  font-size: 16px;
+  font-family: var(--fontRoboto);
 }
 
 .addProject-span {
   margin-top: 6px;
   color: var(--colorRed);
   font-size: 12px;
+  font-family: var(--fontRoboto);
   height: 14px;
 }
 

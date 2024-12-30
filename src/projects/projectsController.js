@@ -43,7 +43,7 @@ export function renderProjectsPage() {
     }
 
     $dialog.onkeydown = (event) => {
-      if (event.keyCode === 27) {
+      if (event.key === "Escape") {
         document.body.style.overflow = "scroll";
         $inputProjectTitle.value = '';
         $inputTechnologies.value = '';

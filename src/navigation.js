@@ -1,6 +1,8 @@
 import {renderHomePage} from "./homePage/homePageController.js";
 import {renderProjectsPage} from "./projects/projectsController.js";
-import {renderAboutMePage} from "./aboutMe/aboutMePageController.js";
+import {renderAboutPage} from "./aboutPage/aboutPageController.js";
+import {renderContactPage} from "./contactPage/contactPageController.js";
+import {renderMessagesPage} from "./messagesPage/messagesPageController.js";
 
 const colorWhite = '#FFFFFF';
 const colorGray = '#ADB6C4'
@@ -28,13 +30,9 @@ function init() {
 
   addListeners($homeButtons, renderHomePage);
   addListeners($projectsButtons, renderProjectsPage);
-  addListeners($aboutButtons, renderAboutMePage);
-  addListeners($contactButton, () => {
-    getMain().replaceChildren();
-  })
-  addListeners($messagesButton, () => {
-    getMain().replaceChildren();
-  })
+  addListeners($aboutButtons, renderAboutPage);
+  addListeners($contactButton, renderContactPage);
+  addListeners($messagesButton, renderMessagesPage);
 
   $navLinks.forEach(link => {
     link.addEventListener('click', (event) => {

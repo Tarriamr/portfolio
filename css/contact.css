@@ -1,0 +1,28 @@
+.contactPageContent {
+  display: grid;
+  gap: 65px;
+  margin: 65px 0;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.contactPageInputContainer {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 110px;
+  row-gap: 60px;
+}
+
+.containerMessage {
+  grid-column: 1/3;
+  grid-row: 2;
+}
+
+.buttonSendMessage {
+  place-self: center;
+  width: 260px;
+  height: 60px;
+  font-size: 16px;
+  font-family: var(--fontRoboto);
+}

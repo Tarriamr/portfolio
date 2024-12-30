@@ -1,5 +1,5 @@
-import {renderHomePage} from "../homePage/homePageController.js";
 import {hideHamburgerMenu} from "../hamburgerMenu.js";
+import {renderContactPage} from "../contactPage/contactPageController.js";
 
 const myBackground = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
 
@@ -21,7 +21,7 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
 const colorWhite = '#FFFFFF';
 const colorGray = '#ADB6C4'
 
-export function renderAboutMePage() {
+export function renderAboutPage() {
   const $pageTitle = document.querySelector(".title-name");
   $pageTitle.textContent = "ABOUT ME";
 
@@ -67,7 +67,7 @@ export function renderAboutMePage() {
     const $contactButton = document.querySelectorAll(`.contactButton`);
     $contactButton.forEach(link => link.style.color = colorGray);
     getMain().replaceChildren();
-    getMain().append(renderHomePage());
+    getMain().append(renderContactPage());
     window.scrollTo({top: 0, behavior: "auto"});
     hideHamburgerMenu();
   });
