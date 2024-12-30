@@ -85,9 +85,9 @@
 
 .title-name {
   font-family: var(--fontLeagueGothic);
-  font-size: 6rem;
+  font-size: 96px;
   font-weight: 400;
-  line-height: 7.2rem;
+  line-height: 115px;
   margin: 0;
   text-align: center;
 }
@@ -95,15 +95,16 @@
 .title-profession {
   font-family: var(--fontLeagueSpartan);
   letter-spacing: 0.36em;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 400;
-  line-height: 1.84rem;
+  line-height: 30px;
   margin: 0;
   text-align: center;
 }
 
 .main {
   display: grid;
+  grid-auto-rows: max-content;
   place-items: center;
   gap: 84px;
   min-height: calc(100vh - 500px - 400px);
@@ -162,7 +163,7 @@
 .skill-name {
   font-family: var(--fontRoboto);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: normal;
 }
 
@@ -210,6 +211,10 @@
   place-content: center;
   gap: 84px 41px;
   width: calc(100% - 278px);
+  text-align: center;
+  font-family: var(--fontRoboto);
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .homePage-showSingleProjectRow > *:nth-child(n + 4) {
@@ -291,6 +296,10 @@
   }
 }
 
+.project-listElement{
+  text-align: left;
+}
+
 .buttonsCarousel {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -363,12 +372,4 @@
 
 .logoFooter {
   font-size: 27px;
-}
-
-
-/* --------------------------------------------------------------------- */
-
-
-.addProjectButton {
-  margin: 65px auto 65px auto;
 }

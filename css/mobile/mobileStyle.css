@@ -51,6 +51,7 @@
   .main {
     width: 100%;
     min-width: 320px;
+    min-height: calc(100vh - 500px - 232px);
   }
 
   .homePage-content {
@@ -65,14 +66,10 @@
   }
 
   .projectsContainer {
-
-  }
-
-  .projectsContainer {
-    /*grid-template-columns: 100%;*/
-    /*place-items: center;*/
-    /*row-gap: 41px;*/
-    /*min-width: 300px;*/
+    grid-template-columns: 100%;
+    place-items: center;
+    row-gap: 41px;
+    min-width: 300px;
   }
 
   .homePage-showSingleProjectRow {

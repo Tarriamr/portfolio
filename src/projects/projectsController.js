@@ -11,6 +11,12 @@ function onAddProject(title, skills) {
 }
 
 export function renderProjectsPage() {
+  const $pageTitle = document.querySelector(".title-name");
+  $pageTitle.textContent = "MY PROJECTS";
+
+  const $titleProfession = document.querySelector(".title-profession");
+  $titleProfession.textContent = "MADE WITH LOVE";
+
   const $dialog = document.createElement('dialog');
   $dialog.id = "new-project";
 
@@ -20,7 +26,6 @@ export function renderProjectsPage() {
   const $addProjectButton = document.createElement('button');
   $addProjectButton.id = 'buttonAddProject';
   $addProjectButton.className = "add buttonGrey addProjectButton";
-  $addProjectButton.textContent = 'Add Project';
   $addProjectButton.addEventListener('click', () => {
     document.body.style.overflow = "hidden";
     $dialog.showModal();
@@ -45,6 +50,10 @@ export function renderProjectsPage() {
       }
     }
   });
+
+  const $buttonText = document.createTextNode('Add project');
+  const $buttonSpan = document.createElement('span');
+  $addProjectButton.append($buttonSpan, $buttonText);
 
   const $projectsComponent = createProjectsComponent(false, true);
 

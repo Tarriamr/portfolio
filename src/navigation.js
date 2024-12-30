@@ -1,5 +1,6 @@
 import {renderHomePage} from "./homePage/homePageController.js";
 import {renderProjectsPage} from "./projects/projectsController.js";
+import {renderAboutMePage} from "./aboutMe/aboutMePageController.js";
 
 const colorWhite = '#FFFFFF';
 const colorGray = '#ADB6C4'
@@ -12,6 +13,7 @@ function addListeners(links, renderPageFunction) {
     button.addEventListener('click', () => {
       $main.replaceChildren();
       $main.append(renderPageFunction());
+      window.scrollTo({top: 0, behavior: "auto"});
     });
   });
 }
@@ -26,9 +28,7 @@ function init() {
 
   addListeners($homeButtons, renderHomePage);
   addListeners($projectsButtons, renderProjectsPage);
-  addListeners($aboutButtons, () => {
-    getMain().replaceChildren();
-  })
+  addListeners($aboutButtons, renderAboutMePage);
   addListeners($contactButton, () => {
     getMain().replaceChildren();
   })

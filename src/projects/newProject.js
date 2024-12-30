@@ -1,5 +1,4 @@
 export class NewProject {
-  validation = false;
 
   constructor(modal) {
     this.modal = modal;
@@ -12,37 +11,45 @@ export class NewProject {
     this.esc($buttonEsc);
 
     const $divContainer = document.createElement('div');
-    $divContainer.className = 'centerElement';
+    $divContainer.className = 'centerElement addProjectContainer';
 
     const $divProjectTitle = document.createElement('div');
+    $divProjectTitle.className = 'addProject-div';
 
     const $labelInputProjectTitle = document.createElement('label');
     $labelInputProjectTitle.for = 'labelInputProjectTitle';
+    $labelInputProjectTitle.className = 'addProject-label';
     $labelInputProjectTitle.textContent = 'Project title';
 
     this.$inputProjectTitle = document.createElement('input');
     this.$inputProjectTitle.id = 'inputProjectTitle';
+    this.$inputProjectTitle.className = 'addProject-input';
     this.$inputProjectTitle.placeholder = 'Project title';
     this.$inputProjectTitle.type = 'text';
 
     this.$commentProjectTitle = document.createElement('span');
     this.$commentProjectTitle.id = 'commentProjectTitle';
+    this.$commentProjectTitle.className = 'addProject-span';
 
     $divProjectTitle.append($labelInputProjectTitle, this.$inputProjectTitle, this.$commentProjectTitle);
 
     const $divTechnologies = document.createElement('div');
+    $divTechnologies.className = 'addProject-div';
 
     const $labelInputTechnologies = document.createElement('label');
     $labelInputTechnologies.for = 'inputTechnologies';
+    $labelInputTechnologies.className = 'addProject-label';
     $labelInputTechnologies.textContent = 'Technologies';
 
     this.$inputTechnologies = document.createElement('input');
     this.$inputTechnologies.id = 'inputTechnologies';
-    this.$inputTechnologies.placeholder = 'html, css, javascript';
+    this.$inputTechnologies.className = 'addProject-input';
+    this.$inputTechnologies.placeholder = 'html,css,javascript';
     this.$inputTechnologies.type = 'text';
 
     this.$commentTechnologies = document.createElement('span');
     this.$commentTechnologies.id = 'commentTechnologies';
+    this.$commentTechnologies.className = 'addProject-span';
 
     $divTechnologies.append($labelInputTechnologies, this.$inputTechnologies, this.$commentTechnologies);
 
@@ -50,14 +57,21 @@ export class NewProject {
     this.$buttonCreateProject.className = 'add buttonGrey';
     this.$buttonCreateProject.id = 'button-create-project';
     this.$buttonCreateProject.onclick = () => {
-      const title = this.$inputProjectTitle.value;
-      const skills = this.$inputTechnologies.value.split(',');
+      if (this.checkProjectTitle()) {
+        if (this.checkTechnologies()) {
+          const title = this.$inputProjectTitle.value;
+          const skills = this.$inputTechnologies.value.split(',');
+          const trimmedSkills = skills.map(str => str.trim());
 
-      onAddProject(title, skills);
+          onAddProject(title, trimmedSkills);
 
-      this.$inputProjectTitle.value = '';
-      this.$inputTechnologies.value = '';
-      this.modal.close();
+          this.$inputProjectTitle.value = '';
+          this.$inputTechnologies.value = '';
+          this.modal.close();
+        }
+      } else {
+        this.checkTechnologies();
+      }
     }
 
     const $buttonText = document.createTextNode('Add project');
@@ -85,13 +99,15 @@ export class NewProject {
     if (length < 3) {
       $commentProjectTitle.textContent = 'The title must be at least 3 characters long.';
       $inputProjectTitle.style.borderColor = '#AF0808';
+      return false;
     } else if (length > 30) {
       $commentProjectTitle.textContent = 'The title must not exceed 30 characters.';
       $inputProjectTitle.style.borderColor = '#AF0808';
+      return false;
     } else {
       $commentProjectTitle.textContent = '';
       $inputProjectTitle.style.borderColor = '#1F2041';
-      this.validation = true;
+      return true;
     }
   }
 
@@ -99,13 +115,14 @@ export class NewProject {
     const $commentTechnologies = document.querySelector('#commentTechnologies');
     const $inputTechnologies = document.querySelector('#inputTechnologies');
     const length = $inputTechnologies.value.trim().length;
-    if (length === 0) {
+    if (length < 1) {
       $commentTechnologies.textContent = 'Please add some technologies.';
       $inputTechnologies.style.borderColor = '#AF0808';
+      return false;
     } else {
       $commentTechnologies.textContent = '';
       $inputTechnologies.style.borderColor = '#1F2041';
-      this.validation = true;
+      return true;
     }
   }
 }

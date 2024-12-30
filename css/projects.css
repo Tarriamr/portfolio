@@ -1,108 +1,5 @@
-@import "style.css";
-
-main > button {
+#buttonAddProject {
   margin-top: 84px;
-}
-
-main > div {
-  backdrop-filter: grayscale(90%);
-  -webkit-backdrop-filter: grayscale(90%);
-}
-
-dialog::backdrop {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-#new-project {
-  position: fixed;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  border: none;
-  height: 424px;
-  width: 800px;
-  background-color: var(--colorBackground);
-
-  > button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 24px;
-    height: 24px;
-    background-image: var(--buttonClose);
-    background-color: var(--colorBackground);
-    border-radius: unset;
-    box-shadow: none;
-    margin: 6px;
-  }
-
-  > div {
-    display: grid;
-    gap: 32px;
-    position: relative;
-    width: 560px;
-    height: 300px;
-    place-self: center center;
-    font-family: var(--fontRoboto);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: normal;
-
-    > div {
-      display: grid;
-      grid-auto-rows: max-content;
-
-      > label {
-        font-family: var(--fontLeagueSpartan);
-        font-weight: 700;
-        margin-bottom: 16px;
-      }
-
-      > input {
-        height: 20px;
-        border: 0 solid var(--colorMain);
-        border-bottom-width: 2px;
-        padding: 0;
-        background-color: unset;
-        outline: 0;
-      }
-
-      > span {
-        margin-top: 16px;
-        color: var(--colorRed);
-        font-size: 12px;
-        height: 14px;
-      }
-    }
-
-  }
-}
-
-#button-create-project {
-  place-self: end center;
-
-  span {
-    width: 17px;
-    height: 17px;
-  }
-}
-
-#projects {
-  row-gap: 84px;
-  grid-template-rows: max-content;
-}
-
-.project > button {
-  width: 40px;
-  height: 40px;
-  margin: 8px;
-  place-self: end;
-  background-image: var(--buttonBin);
-  background-color: var(--colorBackground);
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .add {
@@ -114,12 +11,105 @@ dialog::backdrop {
   height: 60px;
   font-family: var(--fontRoboto);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: normal;
   color: var(--colorMain);
 
   > span {
     background-image: var(--buttonAdd);
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.project {
+  position: relative;
+}
+
+.project > button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  background-image: var(--buttonBin);
+  background-color: var(--colorBackground);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#new-project::backdrop {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#new-project {
+  position: fixed;
+  z-index: 10;
+  border: none;
+  height: 424px;
+  max-width: 800px;
+  width: 90vw;
+  background-color: var(--colorBackground);
+}
+
+#buttonCancelProjectCreation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background-image: var(--buttonClose);
+  background-color: var(--colorBackground);
+  border-radius: unset;
+  box-shadow: none;
+  margin: 6px;
+}
+
+.addProjectContainer {
+  display: grid;
+  gap: 32px;
+  width: 560px;
+  height: 300px;
+  font-family: var(--fontRoboto);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.addProject-div {
+  display: grid;
+  grid-auto-rows: max-content;
+}
+
+.addProject-label {
+  font-family: var(--fontLeagueSpartan);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.addProject-input {
+  height: 20px;
+  border: 0 solid var(--colorMain);
+  border-bottom-width: 2px;
+  padding: 0;
+  background-color: unset;
+  outline: 0;
+}
+
+.addProject-span {
+  margin-top: 6px;
+  color: var(--colorRed);
+  font-size: 12px;
+  height: 14px;
+}
+
+
+#button-create-project {
+  place-self: end center;
+
+  span {
     width: 17px;
     height: 17px;
   }

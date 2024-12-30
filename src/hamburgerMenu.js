@@ -3,7 +3,7 @@ export const backgroundImageHamburgerMenuGold = 'url("data:image/svg+xml,%3Csvg%
 
 export const $headerLinks = document.querySelector('.headerLinks');
 export const $headerButtonHamburgerMenu = document.querySelector('#hamburgerMenu');
-const $headerActiveLink = document.querySelector('.active');
+const $navLinks = document.querySelectorAll('.links a');
 
 export let hamburgerMenuClicked = false;
 
@@ -20,12 +20,22 @@ function onclickHamburgerMenu() {
       $headerLinks.style.display = 'none';
     }
   }
-  // if (innerWidth <= 768) {
-  //   $headerActiveLink.onclick = () => {
-  //     $headerButtonHamburgerMenu.style.backgroundImage = backgroundImageHamburgerMenuWhite
-  //     $headerLinks.style.display = 'none'
-  //   }
-  // }
+
+  $navLinks.forEach(link => {
+    link.onclick = (() => {
+      hideHamburgerMenu();
+    })
+  })
+}
+
+export function hideHamburgerMenu() {
+  if (innerWidth <= 768) {
+    $headerLinks.style.display = 'none';
+    $headerButtonHamburgerMenu.style.backgroundImage = backgroundImageHamburgerMenuWhite;
+    hamburgerMenuClicked = false;
+  } else {
+    $headerLinks.style.display = 'grid';
+  }
 }
 
 onclickHamburgerMenu();
