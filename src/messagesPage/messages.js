@@ -13,7 +13,7 @@ export const messages = [
     email: 'ernest@email.com',
     message: 'Hello, Please call me at 351-152-555 to talk further.'
   },
-  {id: generateId(), name: 'Jan', email: 'jan@email.com', message: 'Welcome Jan. You created really nice project'}
+  {id: generateId(), name: 'Jan', email: 'jan@email.com', message: 'Welcome Jan. You created really nice project.'}
 ];
 
 export function addMessage(name, email, message) {

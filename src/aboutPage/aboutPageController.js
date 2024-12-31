@@ -45,7 +45,7 @@ export function renderAboutPage() {
   $myBackground.append($headerMyBackground, $paragraphMyBackground);
 
   const $headerMyHobbiesAndInterests = document.createElement("h4");
-  $headerMyHobbiesAndInterests.textContent = "My background";
+  $headerMyHobbiesAndInterests.textContent = "My hobbies and interests";
   const $paragraphMyHobbiesAndInterests = document.createElement("p");
   $paragraphMyHobbiesAndInterests.textContent = myHobbiesAndInterests;
   const $myHobbiesAndInterests = document.createElement("div");

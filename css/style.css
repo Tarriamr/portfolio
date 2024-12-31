@@ -258,6 +258,8 @@
   font-size: 20px;
   line-height: normal;
   color: var(--colorProjectTitle);
+  overflow-wrap: break-word;
+  max-width: 300px;
 }
 
 .project-list {
