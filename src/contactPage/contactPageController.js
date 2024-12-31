@@ -139,15 +139,15 @@ function characterCountValidation(containerClass, min, minComment, max, maxComme
   const length = $input.value.trim().length;
   if (length < min) {
     $span.textContent = minComment;
-    $input.style.borderColor = 'var(colorMain)';
+    $input.style.borderColor = 'var(--colorRed)';
     return false;
   } else if (length > max) {
     $span.textContent = maxComment;
-    $input.style.borderColor = 'var(colorRed)';
+    $input.style.borderColor = 'var(--colorRed)';
     return false;
   } else {
     $span.textContent = '';
-    $input.style.borderColor = 'var(colorMain)';
+    $input.style.borderColor = 'var(--colorMain)';
     return true;
   }
 }
@@ -158,11 +158,11 @@ function emailValidation(containerClass, comment) {
   const $input = document.querySelector(`.${containerClass}-input`);
   if (!re.test($input.value.trim().toLowerCase())) {
     $error.textContent = comment;
-    $input.style.borderColor = 'var(colorRed)';
+    $input.style.borderColor = 'var(--colorRed)';
     return false;
   } else {
     $error.textContent = '';
-    $input.style.borderColor = 'var(colorMain)';
+    $input.style.borderColor = 'var(--colorMain)';
     return true;
   }
 }

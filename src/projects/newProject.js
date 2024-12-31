@@ -1,8 +1,5 @@
 export class NewProject {
 
-  colorMain = '#1F2041';
-  colorRed = '#AF0808';
-
   constructor(modal) {
     this.modal = modal;
   }
@@ -101,15 +98,15 @@ export class NewProject {
     const length = $inputProjectTitle.value.trim().length;
     if (length < 3) {
       $commentProjectTitle.textContent = 'The title must be at least 3 characters long.';
-      $inputProjectTitle.style.borderColor = 'var(colorMain)';
+      $inputProjectTitle.style.borderColor = 'var(--colorRed)';
       return false;
     } else if (length > 30) {
       $commentProjectTitle.textContent = 'The title must not exceed 30 characters.';
-      $inputProjectTitle.style.borderColor = 'var(colorRed)';
+      $inputProjectTitle.style.borderColor = 'var(--colorRed)';
       return false;
     } else {
       $commentProjectTitle.textContent = '';
-      $inputProjectTitle.style.borderColor = 'var(colorMain)';
+      $inputProjectTitle.style.borderColor = 'var(--colorMain)';
       return true;
     }
   }
@@ -120,11 +117,11 @@ export class NewProject {
     const length = $inputTechnologies.value.trim().length;
     if (length < 1) {
       $commentTechnologies.textContent = 'Please add some technologies.';
-      $inputTechnologies.style.borderColor = 'var(colorRed)';
+      $inputTechnologies.style.borderColor = 'var(--colorRed)';
       return false;
     } else {
       $commentTechnologies.textContent = '';
-      $inputTechnologies.style.borderColor = 'var(colorMain)';
+      $inputTechnologies.style.borderColor = 'var(--colorMain)';
       return true;
     }
   }
