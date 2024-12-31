@@ -78,7 +78,7 @@
   line-height: normal;
 }
 
-.addProject-div {
+.addProject {
   display: grid;
   grid-auto-rows: max-content;
 }

@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+
+  .messagesContainer {
+    gap: 84px;
+    margin: 84px 0;
+    min-width: 300px;
+    width: 94%;
+  }
+}

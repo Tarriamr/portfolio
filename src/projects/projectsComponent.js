@@ -36,14 +36,14 @@ function createCarousel($grid, showDeleteButton) {
   const $leftButton = document.createElement("button");
   $leftButton.className = "buttonGrey buttonsCarousel-left";
   $leftButton.onclick = () => {
-    moveFirstProjectToEnd();
+    moveLastProjectToBeginning();
     renderGrid($grid, showDeleteButton);
   };
 
   const $rightButton = document.createElement("button");
   $rightButton.className = "buttonGrey buttonsCarousel-right";
   $rightButton.onclick = () => {
-    moveLastProjectToBeginning();
+    moveFirstProjectToEnd();
     renderGrid($grid, showDeleteButton);
   };
 

@@ -1,4 +1,3 @@
-import {characterCountValidation, emailValidation} from "../projects/inputValidation.js";
 import {addMessage} from "../messagesPage/messages.js";
 
 export function renderContactPage() {
@@ -7,7 +6,6 @@ export function renderContactPage() {
 
   const $titleProfession = document.querySelector(".title-profession");
   $titleProfession.textContent = "SAY HELLO TO ME";
-
 
   const $contactPageContent = document.createElement("div");
   $contactPageContent.className = 'contactPageContent';
@@ -19,9 +17,8 @@ export function renderContactPage() {
   const $contactPageInputContainer = document.createElement("div");
   $contactPageInputContainer.className = "contactPageInputContainer";
 
-
   const $containerName = document.createElement("div");
-  $containerName.className = 'containerName addProject-div';
+  $containerName.className = 'containerName addProject';
 
   const $containerNameLabel = document.createElement('label');
   $containerNameLabel.for = 'containerName-input';
@@ -44,9 +41,8 @@ export function renderContactPage() {
 
   $containerName.append($containerNameLabel, $containerNameInput, $containerNameSpan);
 
-
   const $containerEmail = document.createElement("div");
-  $containerEmail.className = 'containerEmail addProject-div';
+  $containerEmail.className = 'containerEmail addProject';
 
   const $containerEmailLabel = document.createElement('label');
   $containerEmailLabel.for = 'containerEmail-input';
@@ -69,9 +65,8 @@ export function renderContactPage() {
 
   $containerEmail.append($containerEmailLabel, $containerEmailInput, $containerEmailSpan);
 
-
   const $containerMessage = document.createElement("div");
-  $containerMessage.className = 'containerMessage addProject-div';
+  $containerMessage.className = 'containerMessage addProject';
 
   const $containerMessageLabel = document.createElement('label');
   $containerMessageLabel.for = 'containerMessage-input';
@@ -94,9 +89,7 @@ export function renderContactPage() {
 
   $containerMessage.append($containerMessageLabel, $containerMessageInput, $containerMessageSpan);
 
-
   $contactPageInputContainer.append($containerName, $containerEmail, $containerMessage);
-
 
   const $buttonSendMessage = document.createElement('button');
   $buttonSendMessage.className = 'buttonSendMessage buttonGrey';
@@ -126,7 +119,6 @@ export function renderContactPage() {
 
   $contactPageContent.append($contactTitle, $contactPageInputContainer, $buttonSendMessage);
 
-
   const $links = document.querySelectorAll('a');
   $links.forEach(link => {
     link.onclick = () => {
@@ -136,8 +128,41 @@ export function renderContactPage() {
     }
   })
 
-
   const $parent = document.createDocumentFragment();
   $parent.append($contactPageContent);
   return $parent;
+}
+
+function characterCountValidation(containerClass, min, minComment, max, maxComment) {
+  const $span = document.querySelector(`.${containerClass}-span`);
+  const $input = document.querySelector(`.${containerClass}-input`);
+  const length = $input.value.trim().length;
+  if (length < min) {
+    $span.textContent = minComment;
+    $input.style.borderColor = 'var(colorMain)';
+    return false;
+  } else if (length > max) {
+    $span.textContent = maxComment;
+    $input.style.borderColor = 'var(colorRed)';
+    return false;
+  } else {
+    $span.textContent = '';
+    $input.style.borderColor = 'var(colorMain)';
+    return true;
+  }
+}
+
+function emailValidation(containerClass, comment) {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const $error = document.querySelector(`.${containerClass}-span`);
+  const $input = document.querySelector(`.${containerClass}-input`);
+  if (!re.test($input.value.trim().toLowerCase())) {
+    $error.textContent = comment;
+    $input.style.borderColor = 'var(colorRed)';
+    return false;
+  } else {
+    $error.textContent = '';
+    $input.style.borderColor = 'var(colorMain)';
+    return true;
+  }
 }

@@ -1,3 +1,8 @@
 .messages-title-profession {
   max-width: 500px;
 }
+
+.message {
+  font-family: var(--fontLeagueSpartan);
+  font-weight: 700;
+}

@@ -94,6 +94,14 @@
     font-size: 16px;
   }
 
+  .buttonsCarousel-left {
+    background-image: var(--buttonArrowDown);
+  }
+
+  .buttonsCarousel-right {
+    background-image: var(--buttonArrowUp);
+  }
+
   .footer {
     min-width: 320px;
     height: 232px;
@@ -105,7 +113,7 @@
     place-content: center;
   }
 
-  .contactData{
+  .contactData {
     place-self: center;
     gap: 12px;
   }

@@ -17,7 +17,7 @@ export class NewProject {
     $divContainer.className = 'centerElement addProjectContainer';
 
     const $divProjectTitle = document.createElement('div');
-    $divProjectTitle.className = 'addProject-div';
+    $divProjectTitle.className = 'addProject';
 
     const $labelInputProjectTitle = document.createElement('label');
     $labelInputProjectTitle.for = 'labelInputProjectTitle';
@@ -37,7 +37,7 @@ export class NewProject {
     $divProjectTitle.append($labelInputProjectTitle, this.$inputProjectTitle, this.$commentProjectTitle);
 
     const $divTechnologies = document.createElement('div');
-    $divTechnologies.className = 'addProject-div';
+    $divTechnologies.className = 'addProject';
 
     const $labelInputTechnologies = document.createElement('label');
     $labelInputTechnologies.for = 'inputTechnologies';
